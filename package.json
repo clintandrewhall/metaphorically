@@ -1,7 +1,6 @@
 {
   "name": "metaphorical-geek",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.1-2",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -12,8 +11,13 @@
     "ejs": "~0.8.5",
     "express": "~4.2.0",
     "marked": "~0.3",
-    "morgan": "~1.0.0",
+    "node-dir": "~0.1",
     "static-favicon": "~1.0.0",
-    "stylus": "0.42.3"
+    "stylus": "~0.42",
+    "winston": "~0.7"
+  },
+  "subdomain": "metaphorical-geek",
+  "engines": {
+    "node": "0.10.x"
   }
 }

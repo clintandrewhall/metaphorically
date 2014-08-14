@@ -7,6 +7,10 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <p>Clint's lazy, this part is coming.</p>
+    <ul>
+      <% topics.forEach(function(topic) { %>
+        <li><a href="<%=topic.href%>"><%=topic.name%></a></li>
+      <% }) %>
+    </ul>
   </body>
 </html>
