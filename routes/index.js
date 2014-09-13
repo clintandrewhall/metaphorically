@@ -14,10 +14,9 @@ router.get('/', function(req, res) {
 /* GET metaphor. */
 router.get('/:topic', function(req, res) {
   var metaphor = metaphors.getTopic(req.params.topic);
-  marked.parse(metaphor.md, function(err, result) {
+  marked.parse(metaphor.linked, function(err, result) {
     res.render('topic', { title: metaphor.name, md: result });
   });
 });
-
 
 module.exports = router;

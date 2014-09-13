@@ -5,14 +5,16 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.0.0",
-    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0",
+    "cookie-parser": "~1.0",
     "debug": "~0.7.4",
     "ejs": "~0.8.5",
     "express": "~4.2.0",
     "marked": "~0.3",
     "node-dir": "~0.1",
-    "static-favicon": "~1.0.0",
+    "q": "~1.0",
+    "q-io": "~1.11",
+    "static-favicon": "~1.0",
     "stylus": "~0.42",
     "winston": "~0.7"
   },

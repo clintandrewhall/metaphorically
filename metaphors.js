@@ -1,53 +1,43 @@
 var dir = require('node-dir')
-  , fs = require('fs');
+  , fs = require('fs')
+  , Q = require('q');
 
 var topics = [];
 
-var Metaphors = function(directory) {
-  function handlePaths(err, paths) {
-    var files = paths.files;
+function getFileDefinitions(paths, directory) {
+  var files = paths.files;
+  var readFile = Q.denodeify(fs.readFile);
 
-    return files.forEach(function(file) {
-      var raw = file.split(__dirname + directory + '/')[1].split('.md')[0];
-      var tags = raw.split('/');
-      var name = tags.pop();
-      var md = fs.readFileSync(file, {encoding: 'UTF-8'});
-      console.log(md);
-
-      topics[name] = {
-        'name': name,
-        'tags': tags,
-        'path': file,
-        'href': '/' + name,
-        'md': md
-      };
-    });
-  }
-
-  dir.paths(__dirname + directory, function(err, paths) {
-    handlePaths(err, paths);
-    console.log(topics);
+  return files.map(function(file) {
+    var raw = file.split(__dirname + directory + '/')[1].split('.md')[0]
+      , dirs = raw.split('/')
+      , id = dirs.pop()
+      , name = id.replace('-', ' ').toLowerCase();
+    return readFile(file, { encoding: 'UTF-8'}).then(
+      function(md) {
+        var title = md.split('\n')[0]
+          , path = '/' + dirs.join('/') + '/';
+          
+        return {
+          'id': id,
+          'name': name,
+          'path': path,
+          'title': title,
+          'href': path + id,
+          'md': md
+        };
+      }
+    );
   });
+}
 
-  function getTopic(name) {
-    return topics[name];
-  }
-
-  function getAllTopics() {
-    return Object.keys(topics).map(function(key) {
-      return topics[key];
-    });
-  }
-
-  function getAllTopicNames() {
-    return topics.keys();
-  }
-
-  return {
-    'getTopic' : getTopic,
-    'getAllTopics' : getAllTopics,
-    'getAllTopicNames' : getAllTopicNames
-  };
-};
+var Metaphors = function(directory) {
+  var paths = Q.denodeify(dir.paths);
+  return Q.all(
+    paths(__dirname + directory).then(function(paths) {
+      return getFileDefinitions(paths, directory);
+    })
+  );
+}
 
 module.exports = Metaphors;
