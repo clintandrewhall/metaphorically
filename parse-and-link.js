@@ -1,47 +1,57 @@
-var dir = require('node-dir')
-  , Metaphors = require('./metaphors')
-  , Q = require('q')
-  , FS = require('q-io/fs')
-  , root = __dirname + '/lib/metaphors';
+var dir = require('node-dir'),
+  Metaphors = require('./metaphors'),
+  async = require('async'),
+  fs = require('fs'),
+  fse = require('fs-extra'),
+  root = __dirname + '/lib/metaphors';
 
-function createFiles() {
-  return Metaphors('/metaphors').then(
-    function(metaphors) {
-      metaphors.forEach(function(scanFile) {
-        metaphors.forEach(function(libFile) {
-          if (libFile.id === scanFile.id) {
-            return;
-          }
-          var search = libFile.title.replace(' ', '[ |\n]')
-            , regex = new RegExp('(' + search + ')+', 'gi');
-
-          scanFile.md = scanFile.md.replace(regex, function(match) {
-            return '[' + match + '][topic-' + libFile.id + ']';
-          });
-
-          scanFile.md += '\n[topic-' + libFile.id + ']:[' + libFile.href + ']';
-        })
-      });
-      return metaphors;
-    }).then(function(metaphors) {
-      metaphors.forEach(function(file) {
-        FS.makeTree(root + file.path).then(function() {
-          return FS.write(root + file.path + file.id + '.md', file.md);
-        }, function(reason) {
-          console.log(reason);
-        });
-      });
-    });
+function saveFile(file, callback) {
+  fse.outputFile(root + file.path, file.md, function(err) {
+    if (err) {
+      return callback(err);
+    }
+    return callback();
+  });
 }
 
-FS.isDirectory(root).then(function(isDirectory) {
-  if (isDirectory) {
-    return FS.removeTree(root).then(function() {
-      return FS.makeDirectory(root).then(createFiles)
+function saveFiles(callback) {
+  Metaphors.buildLibrary('/metaphors', function(err, library) {
+    var metaphors = library.getTopics();
+    metaphors.forEach(function(scanFile) {
+      metaphors.forEach(function(libFile) {
+        if (libFile.id === scanFile.id) {
+          return;
+        }
+        var search = libFile.title.replace(' ', '[ |\n]'),
+          regex = new RegExp('(' + search + ')+', 'gi'),
+          found = false;
+
+        scanFile.md = scanFile.md.replace(regex, function(match) {
+          found = true;
+          return '[' + match + '][topic-' + libFile.id + ']';
+        });
+
+        if (found) {
+          scanFile.md += '\n[topic-' + libFile.id + ']:[' + libFile.href + ']';
+        }
+      });
     });
-  } else {
-    return createFiles();
+
+    async.each(metaphors, saveFile, function(err) {
+      if (err) {
+        console.log(err);
+      }
+    });
+  });
+}
+
+fse.remove(root, function(err) {
+  if (err) {
+    console.log(err);
   }
-}, function(reason) {
-  console.log(reason);
+  saveFiles(function(err) {
+    if (err) {
+      console.log(err);
+    }
+  });
 });

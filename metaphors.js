@@ -1,43 +1,70 @@
-var dir = require('node-dir')
-  , fs = require('fs')
-  , Q = require('q');
+var dir = require('node-dir'),
+  fs = require('fs'),
+  async = require('async');
 
-var topics = [];
+function createTopic(file, directory, callback) {
+  var raw = file.split(__dirname + directory + '/')[1].split('.md')[0],
+    dirs = raw.split('/'),
+    id = dirs.pop(),
+    name = id.replace('-', ' ').toLowerCase();
 
-function getFileDefinitions(paths, directory) {
-  var files = paths.files;
-  var readFile = Q.denodeify(fs.readFile);
-
-  return files.map(function(file) {
-    var raw = file.split(__dirname + directory + '/')[1].split('.md')[0]
-      , dirs = raw.split('/')
-      , id = dirs.pop()
-      , name = id.replace('-', ' ').toLowerCase();
-    return readFile(file, { encoding: 'UTF-8'}).then(
-      function(md) {
-        var title = md.split('\n')[0]
-          , path = '/' + dirs.join('/') + '/';
-          
-        return {
-          'id': id,
-          'name': name,
-          'path': path,
-          'title': title,
-          'href': path + id,
-          'md': md
-        };
-      }
-    );
+  fs.readFile(file, {
+    encoding: 'UTF-8'
+  }, function(err, md) {
+    var lines = md.split('\n'),
+      title = lines[0],
+      path = '/' + dirs.join('/') + '/' + id + '.md',
+      topic = {
+        'id': id,
+        'name': name,
+        'dirs': dirs,
+        'path': path,
+        'title': title,
+        'href': path + id,
+        'md': md
+      };
+    callback(err, topic);
   });
 }
 
-var Metaphors = function(directory) {
-  var paths = Q.denodeify(dir.paths);
-  return Q.all(
-    paths(__dirname + directory).then(function(paths) {
-      return getFileDefinitions(paths, directory);
-    })
-  );
+function getTopics(paths, directory, callback) {
+  var files = paths.files;
+
+  async.map(files, function(file, callback) {
+    createTopic(file, directory, callback);
+  }, function(err, topics) {
+    callback(err, topics);
+  });
 }
+
+var MetaphorLibrary = function(topics) {
+  var topicMap = {};
+
+  topics.forEach(function(topic) {
+    topicMap[topic.id] = topic;
+  });
+
+  return {
+    getTopics: function() {
+      return topics;
+    },
+    getTopicMap: function() {
+      return topicMap;
+    },
+    getTopicById: function(id) {
+      return topicMap[id];
+    }
+  };
+};
+
+var Metaphors = {
+  'buildLibrary': function(directory, callback) {
+    dir.paths(__dirname + directory, function(err, paths) {
+      getTopics(paths, directory, function(err, topics) {
+        callback(err, new MetaphorLibrary(topics));
+      });
+    });
+  }
+};
 
 module.exports = Metaphors;
