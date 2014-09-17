@@ -12,17 +12,23 @@ new metaphor in the following format:
 [Topic] (matches the file name)
 =======
 > Definition from Google, MW, or wherever
+>
+><cite>from <a href="[address]">source</a></cite>
 
 ## A(n) [TOPIC] is [METAPHOR].
 .
 .
 .
 
-— [GITHUB_TWITTER_HANDLE][1]
+— [GITHUB_TWITTER_WHATEVER_HANDLE][1]
+
+[1]:YOUR PREFERRED WEB ADDRESS
 ```
 
-You can optionally include an image from a CC-compliant source, but restrain the
-image to less than 640 pixels, use a `figure` tag and include proper attribution:
+You can optionally include an image from a CC-compliant source, but
+- restrain the image to less than 640 pixels
+- use a `figure` tag, and
+- include proper attribution.
 
 ```
 <!-- An example of a figure in a metaphor -->

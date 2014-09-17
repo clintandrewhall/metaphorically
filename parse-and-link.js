@@ -32,7 +32,7 @@ function saveFiles(callback) {
         });
 
         if (found) {
-          scanFile.md += '\n[topic-' + libFile.id + ']:[' + libFile.href + ']';
+          scanFile.md += '\n[topic-' + libFile.id + ']:' + libFile.href;
         }
       });
     });

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 var debug = require('debug')('metaphorical-geek');
-var app = require('../app');
+require('../app').start(function(err, application) {
+  var app = application.app;
+  app.set('port', process.env.PORT || 3000);
 
-app.set('port', process.env.PORT || 3000);
-
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
+  var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + server.address().port);
+  });
 });

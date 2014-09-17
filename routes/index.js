@@ -1,22 +1,34 @@
-var express = require('express')
-  , router = express.Router()
-  , Metaphors = require('./../metaphors')
-  , marked = require('marked');
+var express = require('express'),
+  router = express.Router(),
+  marked = require('marked');
 
-var metaphors = new Metaphors('/metaphors');
-
-/* GET home page. */
-router.get('/', function(req, res) {
-  console.log(metaphors.getAllTopics());
-  res.render('index', { title: 'Metaphorical Geek', topics: metaphors.getAllTopics() });
-});
-
-/* GET metaphor. */
-router.get('/:topic', function(req, res) {
-  var metaphor = metaphors.getTopic(req.params.topic);
-  marked.parse(metaphor.linked, function(err, result) {
-    res.render('topic', { title: metaphor.name, md: result });
+function create(library) {
+  router.use(function(req, res, next) {
+    console.log('starting');
+    next();
   });
-});
 
-module.exports = router;
+  /* GET home page. */
+  router.get('/', function(req, res) {
+    console.log('here');
+    res.render('index', {
+      title: 'Metaphorical Geek',
+      topics: library.getTopics()
+    });
+  });
+
+  /* GET metaphor. */
+  router.get('/:topic', function(req, res) {
+    var metaphor = library.getTopicById(req.params.topic);
+    marked.parse(metaphor.md, function(err, result) {
+      res.render('topic', {
+        title: metaphor.name,
+        md: result
+      });
+    });
+  });
+
+  return router;
+}
+
+module.exports = create;

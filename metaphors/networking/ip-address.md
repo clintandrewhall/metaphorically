@@ -1,7 +1,10 @@
 IP Address
 =======
-> a unique string of numbers separated by periods that identifies each
-> computer using the Internet Protocol (IP) to communicate over a network.
+> An Internet Protocol address (IP address) is a numerical label assigned to
+> each device (e.g., computer, printer) participating in a computer network
+> that uses the Internet Protocol for communication.
+>
+> <cite>from <a href="http://en.wikipedia.org/wiki/IP_address">Wikipedia</a></cite>
 
 ## An IP Address is a telephone number.
 While it looks complicated, an IP Address is nothing more than a unique number

@@ -11,6 +11,9 @@ function createTopic(file, directory, callback) {
   fs.readFile(file, {
     encoding: 'UTF-8'
   }, function(err, md) {
+    if (err) {
+      return callback(err);
+    }
     var lines = md.split('\n'),
       title = lines[0],
       path = '/' + dirs.join('/') + '/' + id + '.md',
@@ -20,10 +23,10 @@ function createTopic(file, directory, callback) {
         'dirs': dirs,
         'path': path,
         'title': title,
-        'href': path + id,
+        'href': id,
         'md': md
       };
-    callback(err, topic);
+    callback(null, topic);
   });
 }
 
@@ -58,7 +61,7 @@ var MetaphorLibrary = function(topics) {
 };
 
 var Metaphors = {
-  'buildLibrary': function(directory, callback) {
+  buildLibrary: function(directory, callback) {
     dir.paths(__dirname + directory, function(err, paths) {
       getTopics(paths, directory, function(err, topics) {
         callback(err, new MetaphorLibrary(topics));

@@ -1,7 +1,9 @@
 Router
 =======
-> A device that forwards data packets to the appropriate parts of a computer
-> network.
+> A router is a networking device, commonly specialized hardware, that forwards
+> data packets between computer networks.
+>
+><cite>from <a href="http://en.wikipedia.org/wiki/Router_(computing)">Wikipedia</a></cite>
 
 ## A router is a telephone operator
 In the "old days", you didn't dial someone directly, you lifted the handset and
