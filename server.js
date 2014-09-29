@@ -11,17 +11,18 @@ var path = require('path'),
 
 var development = process.env.NODE_ENV !== 'production';
 
-function renderApp(req, res, next) {
-  var path = url.parse(req.url).pathname;
-  var app = App({
-    path: path
-  });
-  ReactAsync.renderComponentToStringWithAsyncState(app, function(err, markup) {
-    if (err) {
-      return next(err);
+function getAsync(library) {
+  var router = express.Router();
+  router.use(function(req, res, next) {
+    var id = req.path.split('/').pop(),
+      topic = library.getTopicById(id);
+    if (topic) {
+      res.send(topic);
+    } else {
+      next();
     }
-    res.send('<!doctype html>\n' + markup);
   });
+  return router;
 }
 
 var app = express();
@@ -31,15 +32,28 @@ if (development) {
     browserify('./client', {
       debug: true,
       watch: true
-    }));
+    })
+  );
 }
 
-app
-  .use('/assets', express.static(path.join(__dirname, 'assets')))
-  .use(renderApp);
-
 Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
-  app.listen(3000, function() {
-    console.log('Point your browser at http://localhost:3000');
-  });
+  app
+    .use('/public', express.static(path.join(__dirname, 'public')))
+    .use('/async', getAsync(library))
+    .use(function renderApp(req, res, next) {
+      var path = url.parse(req.url).pathname;
+      var app = App({
+        library: library,
+        path: path
+      });
+      ReactAsync.renderComponentToStringWithAsyncState(app, function(err, markup) {
+        if (err) {
+          return next(err);
+        }
+        res.send('<!doctype html>\n' + markup);
+      });
+    })
+    .listen(3000, function() {
+      console.log('Point your browser at http://localhost:3000');
+    });
 });
