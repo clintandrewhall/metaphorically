@@ -31,20 +31,24 @@
     "winston": "~0.7"
   },
   "devDependencies": {
-    "reactify": "~0.13.1",
-    "envify": "~1.2.0",
     "browserify": "~3.44.2",
     "connect-browserify": "~2.0.1",
-    "uglify-js": "~2.4.13",
-    "supervisor": "~0.6.0",
-    "gulp": "~3.8.8",
-    "gulp-concat": "~2.4.1",
-    "gulp-uglify": "~1.0.1",
-    "gulp-imagemin": "~1.0.1",
-    "gulp-sourcemaps": "~1.2.2",
     "del": "~0.1.3",
+    "envify": "~1.2.0",
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.1",
+    "gulp-imagemin": "~1.0.1",
+    "gulp-jshint": "^1.8.5",
     "gulp-less": "~1.3.6",
-    "gulp-webserver": "~0.8.2"
+    "gulp-mocha": "^1.1.1",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-notify": "^2.0.0",
+    "gulp-sourcemaps": "~1.2.2",
+    "gulp-uglify": "~1.0.1",
+    "gulp-webserver": "~0.8.2",
+    "reactify": "~0.13.1",
+    "supervisor": "~0.6.0",
+    "uglify-js": "~2.4.13"
   },
   "subdomain": "metaphorically",
   "engines": {
@@ -52,10 +56,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node parse-and-link && supervisor -i node_modules -e js,jsx server.js",
-    "build": "node parse-and-link && NODE_ENV=production browserify ./ | uglifyjs -cm 2>/dev/null > ./assets/bundle.js",
+    "start": "gulp",
+    "build": "gulp build",
     "start-prod": "NODE_ENV=production node server.js",
-    "clean": "rm -f ./assets/bundle.js && rm -rf ./lib/metaphors"
+    "clean": "gulp clean"
   },
   "author": "Clint Andrew Hall"
 }

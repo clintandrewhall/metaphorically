@@ -70,17 +70,21 @@ function buildMarkdown(dirname, callback) {
   );
 }
 
-fse.remove(root, function(err) {
-  if (err) {
-    console.log(err);
-  }
-  dir.subdirs(src, function(err, dirs) {
-    async.mapSeries(dirs, buildMarkdown, function(err, files) {
-      saveFiles(function(err) {
-        if (err) {
-          console.log(err);
-        }
-      })
+function go() {
+  fse.remove(root, function(err) {
+    if (err) {
+      console.log(err);
+    }
+    dir.subdirs(src, function(err, dirs) {
+      async.mapSeries(dirs, buildMarkdown, function(err, files) {
+        saveFiles(function(err) {
+          if (err) {
+            console.log(err);
+          }
+        })
+      });
     });
   });
-});
+}
+
+module.exports = go;
