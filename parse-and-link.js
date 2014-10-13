@@ -8,7 +8,7 @@ var dir = require('node-dir'),
 
 function saveFiles(callback) {
   Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
-    var metaphors = library.getTopics();
+    var metaphors = library.getTerms();
     metaphors.forEach(function(scanFile) {
       metaphors.forEach(function(libFile) {
         if (libFile.id === scanFile.id) {
@@ -21,11 +21,11 @@ function saveFiles(callback) {
 
         scanFile.md = scanFile.md.replace(regex, function(match) {
           found = true;
-          return '[' + match + '][topic-' + libFile.id + ']';
+          return '[' + match + '][term-' + libFile.id + ']';
         });
 
         if (found) {
-          scanFile.md += '\n[topic-' + libFile.id + ']:' + libFile.href;
+          scanFile.md += '\n[term-' + libFile.id + ']:' + libFile.href;
         }
       });
     });

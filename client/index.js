@@ -3,20 +3,8 @@
  */
 "use strict";
 
-var Bootstrap = require('react-bootstrap'),
-  ReactRouter = require('react-router-component'),
-  Link = ReactRouter.Link,
-  Locations = ReactRouter.Locations,
-  Location = ReactRouter.Location,
-  Nav = Bootstrap.Nav,
-  NavBar = Bootstrap.NavBar,
-  NavItem = Bootstrap.NavItem,
-  NotFound = ReactRouter.NotFound,
-  React = require('react'),
-  ReactAsync = require('react-async'),
-  superagent = require('superagent'),
-  Topic = require('./../components/Topic.jsx'),
-  App = require('./../components/App.jsx');
+var React = require('react'),
+  App = require('./App.jsx');
 
 var Client = React.createClass({
   render: function() {

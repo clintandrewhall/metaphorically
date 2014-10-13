@@ -15,9 +15,9 @@ function getAsync(library) {
   var router = express.Router();
   router.use(function(req, res, next) {
     var id = req.path.split('/').pop(),
-      topic = library.getTopicById(id);
-    if (topic) {
-      res.send(topic);
+      term = library.getTermById(id);
+    if (term) {
+      res.send(term);
     } else {
       next();
     }
@@ -35,6 +35,7 @@ if (development) {
     })
   );
 }
+
 
 Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
   app

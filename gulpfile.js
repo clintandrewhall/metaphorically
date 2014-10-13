@@ -12,10 +12,8 @@ var gulp = require('gulp'),
   parse = require('./parse-and-link');
 
 var paths = {
-  js: 'client/js/**/*',
-  jsx: 'components/**/*',
+  jsx: 'client/**/*.jsx',
   css: 'client/css/style.less',
-  images: 'client/img/**/*',
   server: 'server.js'
 };
 
@@ -32,7 +30,7 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('scripts', ['clean'], function() {
+/*gulp.task('scripts', ['clean'], function() {
   // Minify and copy all JavaScript (except vendor scripts)
   // with sourcemaps all the way down
   return gulp.src(paths.js)
@@ -41,35 +39,27 @@ gulp.task('scripts', ['clean'], function() {
     .pipe(concat('all.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/js'));
-});
-
-// Copy all static images
-gulp.task('images', ['clean'], function() {
-  return gulp.src(paths.images)
-    // Pass in options to the task
-    .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('build/img'));
-});
+});*/
 
 gulp.task('jsx', ['clean'], function() {
   return gulp.src(paths.jsx);
 });
 
-gulp.task('build', ['clean', 'less', 'scripts', 'images'], function() {
+gulp.task('build', ['clean', 'less', 'jsx'], function() {
   return parse();
 });
 
 // start server with nodemon
 gulp.task('serve', function(){
-  nodemon({script: paths.server});
+  nodemon({script: paths.server, ext: '*.jsx'});
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(paths.js, ['js']);
-  gulp.watch(paths.jsx, ['jsx']);
+  //gulp.watch(paths.js, ['js']);
+  //gulp.watch(paths.jsx, ['build']);
   gulp.watch(paths.css, ['less']);
-  gulp.watch(paths.images, ['images']);
+  //gulp.watch(paths.images, ['images']);
 });
 
 // The default task (called when you run `gulp` from cli)

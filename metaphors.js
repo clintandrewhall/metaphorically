@@ -2,24 +2,24 @@ var dir = require('node-dir'),
   fs = require('fs'),
   async = require('async');
 
-var MetaphorLibrary = function(topics) {
-  var topicMap = {};
+var MetaphorLibrary = function(terms) {
+  var termMap = {};
 
-  topics.forEach(function(topic) {
-    topicMap[topic.id] = topic;
+  terms.forEach(function(term) {
+    termMap[term.id] = term;
   });
 
   return {
-    getTopics: function() {
-      return topics;
+    getTerms: function() {
+      return terms;
     },
-    getTopicById: function(id) {
-      return topicMap[id];
+    getTermById: function(id) {
+      return termMap[id];
     }
   };
 };
 
-function createTopic(file, callback) {
+function createTerm(file, callback) {
   var dirs = file.split('/'),
     id = dirs.pop().split('.md')[0],
     name = id.replace('-', ' ').toLowerCase();
@@ -32,14 +32,14 @@ function createTopic(file, callback) {
     }
     var lines = md.split('\n'),
       title = lines[1],
-      topic = {
+      term = {
         'id': id,
         'name': name,
         'title': title,
-        'href': '/topic/' + id,
+        'href': '/term/' + id,
         'md': md
       };
-    callback(null, topic);
+    callback(null, term);
   });
 }
 
@@ -47,9 +47,9 @@ var Metaphors = {
   buildLibrary: function(root, callback) {
     dir.files(__dirname + root, function(err, files) {
       async.mapSeries(files, function(file, callback) {
-        createTopic(file, callback);
-      }, function(err, topics) {
-        callback(err, new MetaphorLibrary(topics));
+        createTerm(file, callback);
+      }, function(err, terms) {
+        callback(err, new MetaphorLibrary(terms));
       });
     });
   }
