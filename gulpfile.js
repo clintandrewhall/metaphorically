@@ -1,66 +1,61 @@
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
-  imagemin = require('gulp-imagemin'),
-  sourcemaps = require('gulp-sourcemaps'),
   del = require('del'),
   less = require('gulp-less'),
-  path = require('path'),
   nodemon = require('gulp-nodemon'),
-  jshint = require('gulp-jshint'),
   notify = require('gulp-notify'),
-  parse = require('./parse-and-link');
+  parse = require('./parse-and-link'),
+  gulp = require('gulp'),
+  browserSync = require('browser-sync'),
+  reload = browserSync.reload,
+  react = require('gulp-react');
 
 var paths = {
-  jsx: 'client/**/*.jsx',
-  css: 'client/css/style.less',
+  css: './client/css/**/*.less',
+  js: './client/js/**/*.js',
+  jsx: './client/**/*.jsx',
+  md: './metaphors/**/*.md',
   server: 'server.js'
 };
 
-// Not all tasks need to use streams
-// A gulpfile is just another node program and you can use all packages available on npm
-gulp.task('clean', function(cb) {
-  // You can use multiple globbing patterns as you would with `gulp.src`
-  del(['build'], cb);
-});
-
-gulp.task('less', function () {
-  gulp.src(paths.css)
+gulp.task('less', function() {
+  return gulp.src(paths.css)
     .pipe(less())
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css'))
+    .pipe(reload({ stream: true }));
 });
 
-/*gulp.task('scripts', ['clean'], function() {
-  // Minify and copy all JavaScript (except vendor scripts)
-  // with sourcemaps all the way down
-  return gulp.src(paths.js)
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(concat('all.min.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/js'));
-});*/
-
-gulp.task('jsx', ['clean'], function() {
-  return gulp.src(paths.jsx);
+gulp.task('jsx', function() {
+  return gulp.src(paths.jsx)
+    .pipe(react())
+    .pipe(gulp.dest('./public/jsx'));
 });
 
-gulp.task('build', ['clean', 'less', 'jsx'], function() {
-  return parse();
-});
-
-// start server with nodemon
-gulp.task('serve', function(){
-  nodemon({script: paths.server, ext: '*.jsx'});
+gulp.task('md', function() {
+  parse();
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  //gulp.watch(paths.js, ['js']);
-  //gulp.watch(paths.jsx, ['build']);
+  browserSync.init(["public"], {
+    server: false
+  });
   gulp.watch(paths.css, ['less']);
-  //gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.jsx, ['jsx']);
+  gulp.watch(paths.md, ['md']);
 });
 
-// The default task (called when you run `gulp` from cli)
-gulp.task('default', ['build', 'serve', 'watch']);
+// start server with nodemon
+gulp.task('serve', function(){
+  nodemon({
+    script: 'server.js',
+    ext: 'jsx, js',
+    env: { 'NODE_ENV': 'development' } ,
+    ignore: ['./node_modules/**'],
+    watch: ['./client', 'server.js', 'metaphors.js', 'parse-and-link.js']
+  });
+});
+
+gulp.task('build', ['less', 'jsx']);
+gulp.task('default', ['build', 'watch', 'serve'])

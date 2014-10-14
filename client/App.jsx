@@ -4,11 +4,10 @@
 "use strict";
 
 var ReactRouter = require('react-router-component'),
-  Bootstrap = require('react-bootstrap'),
+  nodejsx = require('node-jsx').install(),
   Link = ReactRouter.Link,
   Locations = ReactRouter.Locations,
   Location = ReactRouter.Location,
-  Nav = Bootstrap.Nav,
   MainPage = require('./MainPage.jsx'),
   Term = require('./Term.jsx'),
   Titlebar = require('./Titlebar.jsx'),
@@ -23,9 +22,10 @@ var NotFoundHandler = React.createClass({
   }
 });
 
+
 var App = React.createClass({
   render: function() {
-    var terms = this.props.library.getTerms(),
+    /*var terms = this.props.library.getTerms(),
       active = this.props.path.split('/').pop(),
       links = terms.map(function(term) {
         var className = '';
@@ -35,7 +35,7 @@ var App = React.createClass({
         return <li className={className} key={term.id}>
           <Link href={term.href}>{term.title}</Link>
         </li>;
-      });
+      });*/
 
     return (
       <div>

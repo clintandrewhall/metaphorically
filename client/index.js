@@ -12,10 +12,10 @@ var Client = React.createClass({
       <html>
         <head>
           <link rel="stylesheet" href="/public/css/style.css" />
-          <script src="/public/js/bundle.js" />
         </head>
         <body>
           <App library={this.props.library} path={this.props.path} />
+          <script src='//localhost:3000/browser-sync/browser-sync-client.1.5.8.js'></script>
         </body>
       </html>
     );

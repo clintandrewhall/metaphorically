@@ -2,7 +2,7 @@
 
 var React = require('react'),
   ReactAsync = require('react-async'),
-  marked = require('marked'),
+  reactdown = require('reactdown'),
   superagent = require('superagent');
   var Link = require('react-router-component').Link;
 
@@ -11,7 +11,7 @@ var Term = React.createClass({
   statics: {
     getTerm: function(id, cb) {
       superagent.get(
-        'http://localhost:3000/async/' + id,
+        'http://localhost:8000/async/' + id,
         function(err, res) {
           cb(err, res ? {term: res.body} : null);
         });
@@ -35,12 +35,9 @@ var Term = React.createClass({
 
   render: function() {
     if (this.state.term.md) {
-      var markup = marked(this.state.term.md);
+      var markup = reactdown.marked(this.state.term.md);
       return (
-        <div>
-          <Link href='/term/ip-address'>Test</Link>
-          <div className="TermPage" dangerouslySetInnerHTML={{__html:markup}} />
-        </div>
+        <div className="TermPage" dangerouslySetInnerHTML={{__html:markup.html}} />
       );
     }
     return (

@@ -28,6 +28,5 @@ build/Release
 node_modules
 
 # Compiled resources
-public/css
-public/js
-lib/metaphors
+/public
+/lib/metaphors

@@ -25,17 +25,8 @@ function getAsync(library) {
   return router;
 }
 
+
 var app = express();
-
-if (development) {
-  app.get('/assets/bundle.js',
-    browserify('./client', {
-      debug: true,
-      watch: true
-    })
-  );
-}
-
 
 Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
   app
@@ -54,7 +45,7 @@ Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
         res.send('<!doctype html>\n' + markup);
       });
     })
-    .listen(3000, function() {
-      console.log('Point your browser at http://localhost:3000');
+    .listen(8000, function() {
+      console.log('Point your browser at http://localhost:8000');
     });
 });
