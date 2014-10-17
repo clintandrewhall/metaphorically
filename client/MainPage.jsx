@@ -1,12 +1,16 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+"use strict";
+require('node-jsx').install({extension: '.jsx'});
+
+var React = require('react'),
+  Nav = require('./Nav');
 
 var MainPage = React.createClass({
   render: function() {
     return (
       <div className="MainPage">
-        <h1>Hello, world!</h1>
+        <Nav library={this.props.library} />
       </div>
     );
   }

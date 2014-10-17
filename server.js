@@ -1,15 +1,13 @@
 'use strict';
+require('node-jsx').install({extension: '.jsx'});
 
 var path = require('path'),
   url = require('url'),
   express = require('express'),
   browserify = require('connect-browserify'),
   ReactAsync = require('react-async'),
-  nodejsx = require('node-jsx').install(),
   App = require('./client'),
   Metaphors = require('./metaphors');
-
-var development = process.env.NODE_ENV !== 'production';
 
 function getAsync(library) {
   var router = express.Router();

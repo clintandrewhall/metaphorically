@@ -2,15 +2,14 @@
  * @jsx React.DOM
  */
 "use strict";
+require('node-jsx').install({extension: '.jsx'});
 
 var ReactRouter = require('react-router-component'),
-  nodejsx = require('node-jsx').install(),
-  Link = ReactRouter.Link,
   Locations = ReactRouter.Locations,
   Location = ReactRouter.Location,
-  MainPage = require('./MainPage.jsx'),
-  Term = require('./Term.jsx'),
-  Titlebar = require('./Titlebar.jsx'),
+  MainPage = require('./MainPage'),
+  Term = require('./Term'),
+  Titlebar = require('./Titlebar'),
   NotFound = ReactRouter.NotFound,
   React = require('react');
 
@@ -42,8 +41,8 @@ var App = React.createClass({
         <Titlebar />
         <div className="main">
           <Locations className="App" path={this.props.path}>
-            <Location path="/" handler={MainPage} />
-            <Location path="/term/:termId" handler={Term} termPath={this.props.path} />
+            <Location path="/" handler={MainPage} library={this.props.library}/>
+            <Location path="/term/:termId" handler={Term} library={this.props.library} termPath={this.props.path} />
             <NotFound handler={NotFoundHandler} />
           </Locations>
         </div>

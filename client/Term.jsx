@@ -1,10 +1,12 @@
 /** @jsx React.DOM */
+"use strict";
+require('node-jsx').install({extension: '.jsx'});
 
 var React = require('react'),
   ReactAsync = require('react-async'),
   reactdown = require('reactdown'),
+  Nav = require('./Nav.jsx'),
   superagent = require('superagent');
-  var Link = require('react-router-component').Link;
 
 var Term = React.createClass({
   mixins: [ReactAsync.Mixin],
@@ -37,7 +39,10 @@ var Term = React.createClass({
     if (this.state.term.md) {
       var markup = reactdown.marked(this.state.term.md);
       return (
-        <div className="TermPage" dangerouslySetInnerHTML={{__html:markup.html}} />
+        <div>
+          <Nav library={this.props.library} />
+          <div className="TermPage" dangerouslySetInnerHTML={{__html:markup.html}} />
+        </div>
       );
     }
     return (
