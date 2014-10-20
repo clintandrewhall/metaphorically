@@ -1,3 +1,13 @@
+---
+title: Web Browser
+...
+
+<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Web_browser">
+  A web browser (commonly referred to as a browser) is a software application
+  for retrieving, presenting and traversing information resources on the World
+  Wide Web.
+</Definition>
+
 ## A Web Browser is a Tour Guide
 If you wanted to visit a specific building in a new city, and were taking a
 tour, you could ask a tour guide to take you there.  If the address is valid,

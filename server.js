@@ -6,7 +6,7 @@ var path = require('path'),
   express = require('express'),
   browserify = require('connect-browserify'),
   ReactAsync = require('react-async'),
-  App = require('./client'),
+  App = require('./public/jsx'),
   Metaphors = require('./metaphors');
 
 function getAsync(library) {
@@ -26,7 +26,7 @@ function getAsync(library) {
 
 var app = express();
 
-Metaphors.buildLibrary('/lib/metaphors', function(err, library) {
+Metaphors.buildLibrary('/public/md', function(err, library) {
   app
     .use('/public', express.static(path.join(__dirname, 'public')))
     .use('/async', getAsync(library))

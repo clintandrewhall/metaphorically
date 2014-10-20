@@ -1,57 +1,37 @@
-var dir = require('node-dir'),
-  fs = require('fs'),
-  async = require('async');
+var  fse = require('fs-extra');
 
 var MetaphorLibrary = function(terms) {
-  var termMap = {};
+  var list = [],
+    keys = Object.keys(terms);
 
-  terms.forEach(function(term) {
-    termMap[term.id] = term;
+  keys.forEach(function(key) {
+    list.push(terms[key]);
   });
 
   return {
+    getTermList: function() {
+      return list;
+    },
     getTerms: function() {
       return terms;
     },
+    getTermIds: function() {
+      return Object.keys(terms);
+    },
     getTermById: function(id) {
-      return termMap[id];
+      return terms[id];
     }
   };
 };
 
-function createTerm(file, callback) {
-  var dirs = file.split('/'),
-    id = dirs.pop().split('.md')[0],
-    name = id.replace('-', ' ').toLowerCase();
-
-  fs.readFile(file, {
-    encoding: 'UTF-8'
-  }, function(err, md) {
-    if (err) {
-      return callback(err);
-    }
-    var lines = md.split('\n'),
-      title = lines[1],
-      term = {
-        'id': id,
-        'name': name,
-        'title': title,
-        'href': '/term/' + id,
-        'md': md
-      };
-    callback(null, term);
-  });
-}
-
 var Metaphors = {
   buildLibrary: function(root, callback) {
-    dir.files(__dirname + root, function(err, files) {
-      async.mapSeries(files, function(file, callback) {
-        createTerm(file, callback);
-      }, function(err, terms) {
-        callback(err, new MetaphorLibrary(terms));
-      });
-    });
+    fse.readJSON(
+      __dirname + root + '/meta.js',
+      function(err, obj) {
+        return callback(err, new MetaphorLibrary(obj));
+      }
+    );
   }
 };
 

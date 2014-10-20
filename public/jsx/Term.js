@@ -1,14 +1,13 @@
 /** @jsx React.DOM */
 "use strict";
-require('node-jsx').install({extension: '.jsx'});
 
 var React = require('react'),
   ReactAsync = require('react-async'),
   reactdown = require('reactdown'),
-  Nav = require('./Nav.jsx'),
+  Nav = require('./Nav'),
   superagent = require('superagent');
 
-var Term = React.createClass({
+var Term = React.createClass({displayName: 'Term',
   mixins: [ReactAsync.Mixin],
   statics: {
     getTerm: function(id, cb) {
@@ -36,17 +35,18 @@ var Term = React.createClass({
   },
 
   render: function() {
-    if (this.state.term.md) {
-      var markup = reactdown.marked(this.state.term.md);
+    if (this.state.term && this.state.term.id) {
+      var it = require('./../md/' + this.state.term.id);
       return (
-        <div>
-          <Nav library={this.props.library} />
-          <div className="TermPage" dangerouslySetInnerHTML={{__html:markup.html}} />
-        </div>
+        React.DOM.div(null, 
+          Nav({library: this.props.library}), 
+          React.DOM.h2(null, this.state.term.title), 
+          it()
+        )
       );
     }
     return (
-      <div className="NotFound" />
+      React.DOM.div({className: "NotFound"})
     );
   }
 });

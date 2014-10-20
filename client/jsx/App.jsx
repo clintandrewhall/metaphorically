@@ -2,11 +2,11 @@
  * @jsx React.DOM
  */
 "use strict";
-require('node-jsx').install({extension: '.jsx'});
 
 var ReactRouter = require('react-router-component'),
   Locations = ReactRouter.Locations,
   Location = ReactRouter.Location,
+  Link = ReactRouter.Link,
   MainPage = require('./MainPage'),
   Term = require('./Term'),
   Titlebar = require('./Titlebar'),
@@ -21,10 +21,9 @@ var NotFoundHandler = React.createClass({
   }
 });
 
-
 var App = React.createClass({
   render: function() {
-    /*var terms = this.props.library.getTerms(),
+    var terms = this.props.library.getTermList(),
       active = this.props.path.split('/').pop(),
       links = terms.map(function(term) {
         var className = '';
@@ -34,7 +33,7 @@ var App = React.createClass({
         return <li className={className} key={term.id}>
           <Link href={term.href}>{term.title}</Link>
         </li>;
-      });*/
+      });
 
     return (
       <div>

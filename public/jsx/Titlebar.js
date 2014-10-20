@@ -2,14 +2,13 @@
  * @jsx React.DOM
  */
 "use strict";
-require('node-jsx').install({extension: '.jsx'});
 
 var React = require('react');
 
-var Titlebar = React.createClass({
+var Titlebar = React.createClass({displayName: 'Titlebar',
   render: function() {
     return (
-      <h1><a href="/">metaphorical.ly</a></h1>
+      React.DOM.h1(null, React.DOM.a({href: "/"}, "metaphorical.ly"))
     );
   }
 });
