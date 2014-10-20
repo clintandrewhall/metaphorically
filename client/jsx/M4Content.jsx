@@ -7,9 +7,10 @@ var React = require('react'),
 var M4Content = React.createClass({
   render: function() {
     return (
-      <section className="m4Content">
-        {this.props.children}
-      </section>
+      <section
+        className="m4Content"
+        dangerouslySetInnerHTML={{__html: marked(this.props.children)}}
+      />
     );
   }
 });

@@ -1,6 +1,8 @@
 metaphorical-geek
 =================
 
+[ ![Codeship Status for clintandrewhall/metaphorically](https://codeship.io/projects/fadad5e0-3aa3-0132-083a-261a2707f8ca/status)](https://codeship.io/projects/42427)
+
 Metaphors rock.
 
 ## How to submit your metaphor
