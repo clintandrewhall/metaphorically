@@ -30,7 +30,7 @@ gulp.task('jsx', ['clean-jsx'], function() {
 });
 
 gulp.task('md', ['clean-md'], function(callback) {
-  return build(callback);
+  return build({}, callback);
 });
 
 // start server with nodemon
@@ -39,8 +39,8 @@ gulp.task('serve', ['clean', 'build'], function(callback) {
     script: 'server.js',
     ext: 'jsx, js',
     env: { 'NODE_ENV': 'development' } ,
-    ignore: ['./node_modules/**'],
-    watch: ['./public', './server.js', './metaphors.js', './build.js']
+    ignore: ['./node_modules/**', './public/cache/**'],
+    watch: ['./public/jsx', './public/md', './server.js', './metaphors.js', './build.js']
   }).on('start', function () {
     browserSync.init('public/css/*.css', {
       server: false
@@ -51,7 +51,11 @@ gulp.task('serve', ['clean', 'build'], function(callback) {
   });
 });
 
-gulp.task('clean', ['clean-jsx', 'clean-css', 'clean-md']);
+gulp.task('clean', ['clean-jsx', 'clean-css', 'clean-md', 'clean-cache']);
+
+gulp.task('clean-cache', function(cb) {
+    del(['public/cache'], cb);
+});
 
 gulp.task('clean-jsx', function(cb) {
     del(['public/jsx'], cb);

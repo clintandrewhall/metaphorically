@@ -4,7 +4,6 @@ require('node-jsx').install({extension: '.jsx'});
 var path = require('path'),
   url = require('url'),
   express = require('express'),
-  browserify = require('connect-browserify'),
   ReactAsync = require('react-async'),
   App = require('./public/jsx'),
   Metaphors = require('./metaphors');
@@ -23,10 +22,13 @@ function getAsync(library) {
   return router;
 }
 
-
 var app = express();
 
-Metaphors.buildLibrary('/public/md', function(err, library) {
+Metaphors.buildLibrary('/public/md', {'cache': true}, function(err, library) {
+  if (err) {
+    console.log(err);
+  }
+  console.log(library.getTermList());
   app
     .use('/public', express.static(path.join(__dirname, 'public')))
     .use('/async', getAsync(library))

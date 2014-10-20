@@ -9,19 +9,23 @@ var dir = require('node-dir'),
 
 var markdown = {};
 
-function saveFiles(callback) {
-  Metaphors.buildLibrary('/public/md', function(err, library) {
+function saveFiles(opts, callback) {
+  Metaphors.buildLibrary('/public/md', opts, function(err, library) {
+    if (err) {
+      return callback(err);
+    }
     var metaphors = library.getTermList();
+
     var jsx = fs.readdir(__dirname + '/client/jsx', function(err, files) {
       if (err) {
         return callback(err);
       };
       files = files.map(function(file) {
         return file.split('/').pop().split('.jsx')[0];
-      })
+      });
+
       metaphors.forEach(function(scanFile) {
         var content = markdown[scanFile.id];
-
         metaphors.forEach(function(libFile) {
           if (libFile.id === scanFile.id) {
             return;
@@ -39,26 +43,32 @@ function saveFiles(callback) {
           if (found) {
             content += '\n[term-' + libFile.id + ']:' + libFile.href;
           }
-
-          var lines = content.split('\n'),
-            front = [lines.shift()];
-          front.push('scope:');
-          files.forEach(function(file) {
-            if (file !== 'index') {
-              front.push('  ' + file + ': ./../jsx/' + file);
-            }
-          });
-          lines = front.concat(lines);
-          content = lines.join('\n');
         });
 
-        scanFile.md = reactdown(content, {});
+        files.forEach(function(file) {
+          if (file !== 'index') {
+            content = content.replace(new RegExp('<' + file), function(match) {
+              return match += ' term={props.term}';
+            });
+          }
+        });
+        // Add Component definitions
+        var lines = content.split('\n'),
+          front = [lines.shift()];
+        front.push('scope:');
+        files.forEach(function(file) {
+          if (file !== 'index') {
+            front.push('  ' + file + ': ./../jsx/' + file);
+          }
+        });
+        lines = front.concat(lines);
+        scanFile.md = lines.join('\n');
       });
 
       async.each(metaphors, function(metaphor, callback) {
         fse.outputFile(
-          root + '/md/' + metaphor.id + '.js',
-          metaphor.md.code,
+          root + '/md/' + metaphor.id + '.md',
+          metaphor.md,
           function(err) {
             callback(err);
             delete metaphor.md;
@@ -71,7 +81,7 @@ function saveFiles(callback) {
   });
 }
 
-function buildMarkdown(callback) {
+function buildMarkdown(opts, callback) {
   var terms = {};
 
   dir.readFiles('./metaphors', {
@@ -88,7 +98,7 @@ function buildMarkdown(callback) {
         term = contents.meta;
 
       term.id = id;
-      term.path = filename;
+      term.path = root + '/md/' + id + '.md';
       term.href = '/term/' + id;
       terms[id] = term;
       markdown[id] = content;
@@ -96,6 +106,7 @@ function buildMarkdown(callback) {
       next();
     },
     function() {
+      console.log(terms);
       fse.outputFile(root + '/md/meta.js', JSON.stringify(terms), function(err) {
         return callback(err);
       });
@@ -103,15 +114,16 @@ function buildMarkdown(callback) {
   );
 }
 
-function go(callback) {
-  buildMarkdown(function(err) {
+function go(opts, callback) {
+  buildMarkdown(opts, function(err) {
     if (err) {
       return callback(err);
     } else {
-      saveFiles(function(err) {
+      saveFiles(opts, function(err) {
         return callback(err);
       });
     }
   });
 }
+
 module.exports = go;
