@@ -10,7 +10,7 @@ title: Router
 </Definition>
 
 <Metaphor id="operator">
-  <M4Title>A router is a telephone operator</M4Title>
+  <M4Title>A router is a Telephone Operator.</M4Title>
   <M4Content>
     In the "old days", you didn't dial someone directly, you lifted the handset and
     asked the operator to connect you somewhere.  Telephone operators sat at large
@@ -25,7 +25,7 @@ title: Router
 </Metaphor>
 
 <Metaphor id="receptionist">
-  <M4Title>A router is a receptionist</M4Title>
+  <M4Title>A router is a Receptionist.</M4Title>
   <M4Content>
     When you connect a router to your modem, it takes the IP address of your modem
     and gives everyone connected to it a private IP address that only it knows.

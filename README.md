@@ -26,3 +26,5 @@ title: Name of the Tech
   <M4Author handle="YOUR HANDLE" href="LINK TO YOU" />
 </Metaphor>
 ```
+
+Markdown is accepted almost anywhere, even outside the tags themselves.

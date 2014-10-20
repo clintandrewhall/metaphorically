@@ -7,9 +7,9 @@ var marked = require('marked');
 var Definition = React.createClass({
   render: function() {
     return (
-      <div id={this.props.term.id} className="definition">
-        <h2>{this.props.title}</h2>
+      <div className="definition" id="definition">
         <blockquote dangerouslySetInnerHTML={{__html: marked(this.props.children)}} />
+        <cite>— <a href={this.props.href}>{this.props.source}</a></cite>
       </div>
     );
   }
