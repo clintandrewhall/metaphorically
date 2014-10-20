@@ -10,23 +10,19 @@ title: IP Address
 
 <Metaphor id="mail">
   <M4Title>An IP Address is a mailing address.</M4Title>
-  <M4Content>
     Like a mailman delivering mail, an IP Address is how the Internet network knows
     how to deliver responses from web servers and other devices directly to you.
-  </M4Content>
   <M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
 </Metaphor>
 
 <Metaphor id="phone">
   <M4Title>An IP Address is a telephone number</M4Title>
-  <M4Content>
-    While it looks complicated, an IP Address is nothing more than a unique number
-    to identify you on the Internet.  These numbers are assigned by your ISP, or,
-    if you have one, your router.
+  While it looks complicated, an IP Address is nothing more than a unique number
+  to identify you on the Internet.  These numbers are assigned by your ISP, or,
+  if you have one, your router.
 
-    When you request a page from a web server, your request is marked as coming
-    from a specific address. When the response is ready, the web server sends it to
-    your specific number, much like you talking to someone over the phone.
-  </M4Content>
+  When you request a page from a web server, your request is marked as coming
+  from a specific address. When the response is ready, the web server sends it to
+  your specific number, much like you talking to someone over the phone.
   <M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
 </Metaphor>
