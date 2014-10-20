@@ -102,11 +102,9 @@ function buildMarkdown(opts, callback) {
       term.href = '/term/' + id;
       terms[id] = term;
       markdown[id] = content;
-
       next();
     },
     function() {
-      console.log(terms);
       fse.outputFile(root + '/md/meta.js', JSON.stringify(terms), function(err) {
         return callback(err);
       });

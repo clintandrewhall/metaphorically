@@ -28,7 +28,6 @@ Metaphors.buildLibrary('/public/md', {'cache': true}, function(err, library) {
   if (err) {
     console.log(err);
   }
-  console.log(library.getTermList());
   app
     .use('/public', express.static(path.join(__dirname, 'public')))
     .use('/async', getAsync(library))
