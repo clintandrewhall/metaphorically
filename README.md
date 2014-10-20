@@ -28,3 +28,16 @@ title: Name of the Tech
 ```
 
 Markdown is accepted almost anywhere, even outside the tags themselves.
+
+## Hacky, Hacky
+
+I've been in a bit of a hurry to get this together, so the code isn't the
+greatest (#movefast).  All the same, feel free to take a look and suggest
+improvements.
+
+Most of the legwork has been in trying to make the metaphor pages as simple
+to create and edit as possible. I've got a pretty hacky build script that auto
+links everything together, but one cool thing is using `react-markdown` to blend
+markdown and React, (yes, I'm crazy).
+
+Anyways, let me know what you think.  Cheers!
