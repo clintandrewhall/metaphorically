@@ -69,5 +69,5 @@ gulp.task('clean-md', function(cb) {
     del(['public/md'], cb);
 });
 
-gulp.task('build', ['less', 'jsx', 'md']);
+gulp.task('build', ['clean', 'less', 'jsx', 'md']);
 gulp.task('default', ['clean', 'build', 'serve']);

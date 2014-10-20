@@ -23,20 +23,9 @@ var NotFoundHandler = React.createClass({
 
 var App = React.createClass({
   render: function() {
-    var terms = this.props.library.getTermList(),
-      active = this.props.path.split('/').pop(),
-      links = terms.map(function(term) {
-        var className = '';
-        if (term.id === active) {
-          className = 'active';
-        }
-        return <li className={className} key={term.id}>
-          <Link href={term.href}>{term.title}</Link>
-        </li>;
-      });
 
     return (
-      <div>
+      <div className="container">
         <Titlebar />
         <div className="main">
           <Locations className="App" path={this.props.path}>

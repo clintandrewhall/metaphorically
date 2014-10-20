@@ -2,17 +2,18 @@ var  fse = require('fs-extra'),
   fs = require('fs'),
   async = require('async'),
   reactdown = require('reactdown'),
-  root = __dirname + '/public';
+  appRoot = require('app-root-path'),
+  root = appRoot + '/public/md';
 
 function cache(term, callback) {
-  file = fs.readFile(term.path, {encoding: 'UTF-8'}, function(err, data) {
+  file = fs.readFile(appRoot + term.path, {encoding: 'UTF-8'}, function(err, data) {
     if (err) {
       return callback(err);
     }
     var md = reactdown(data, {}),
-      path = root + '/cache/' + term.id + '.js';
+      path = '/public/cache/' + term.id + '.js';
 
-    fse.outputFile(path, md.code, function(err) {
+    fse.outputFile(appRoot + path, md.code, function(err) {
       if (err) {
         return callback(err);
       }
@@ -23,6 +24,9 @@ function cache(term, callback) {
 }
 
 var MetaphorLibrary = function(terms, opts, callback) {
+  if (!terms) {
+    return callback('No terms available.');
+  }
   var keys = Object.keys(terms);
 
   if (opts.cache) {
@@ -81,7 +85,7 @@ var MetaphorLibrary = function(terms, opts, callback) {
 var Metaphors = {
   buildLibrary: function(root, opts, callback) {
     fse.readJSON(
-      __dirname + root + '/meta.js',
+      appRoot + root + '/meta.js',
       function(err, obj) {
         MetaphorLibrary(obj, opts, function(err, library) {
           if (err) {

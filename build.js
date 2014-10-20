@@ -4,8 +4,9 @@ var dir = require('node-dir'),
   fse = require('fs-extra'),
   reactdown = require('reactdown'),
   Metaphors = require('./metaphors'),
-  src = __dirname + '/metaphors';
-  root = __dirname + '/public';
+  appRoot = require('app-root-path'),
+  src = appRoot + '/metaphors';
+  root = appRoot + '/public';
 
 var markdown = {};
 
@@ -16,7 +17,7 @@ function saveFiles(opts, callback) {
     }
     var metaphors = library.getTermList();
 
-    var jsx = fs.readdir(__dirname + '/client/jsx', function(err, files) {
+    var jsx = fs.readdir(appRoot + '/client/jsx', function(err, files) {
       if (err) {
         return callback(err);
       };
@@ -83,8 +84,9 @@ function saveFiles(opts, callback) {
 
 function buildMarkdown(opts, callback) {
   var terms = {};
+  console.log(appRoot + '/metaphors');
 
-  dir.readFiles('./metaphors', {
+  dir.readFiles(appRoot + '/metaphors', {
     match: /.md$/,
     exclude: /^\./,
     recursive: false
@@ -98,7 +100,7 @@ function buildMarkdown(opts, callback) {
         term = contents.meta;
 
       term.id = id;
-      term.path = root + '/md/' + id + '.md';
+      term.path = '/public/md/' + id + '.md';
       term.href = '/term/' + id;
       terms[id] = term;
       markdown[id] = content;

@@ -7,7 +7,7 @@ var React = require('react');
 var MainPage = React.createClass({
   render: function() {
     return (
-      <nav>
+      <nav className="three column sidebar">
         <ul>
           <li><a href="/">Home</a></li>
         {

@@ -7,6 +7,7 @@ var React = require('react'),
   Nav = require('./Nav'),
   superagent = require('superagent'),
   fs = require('fs'),
+  appRoot = require('app-root-path'),
   reactdown = require('reactdown');
 
 function getTerm(id, cb) {
@@ -38,12 +39,14 @@ var Term = React.createClass({
 
   render: function() {
     if (this.state.term && this.state.term.id) {
-      var code = require(this.state.term.path);
+      var code = require(appRoot + this.state.term.path);
       return (
         <div>
           <Nav library={this.props.library} />
-          <h2>{this.state.term.title}</h2>
-          {code({term: this.state.term})}
+          <div className="twelve columns offset-by-one content">
+            <h2>{this.state.term.title}</h2>
+            {code({term: this.state.term})}
+          </div>
         </div>
       );
     }
