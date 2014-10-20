@@ -53,4 +53,8 @@
     "predeploy": "gulp build",
     "start": "node server.js"
   }
+  "domains": [
+    "metaphorical.ly",
+    "www.metaphorical.ly"
+  ],
 }
