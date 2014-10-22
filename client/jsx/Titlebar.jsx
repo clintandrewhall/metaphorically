@@ -9,6 +9,7 @@ var Titlebar = React.createClass({
   render: function() {
     return (
       <h1><a href="/">metaphorical.ly</a></h1>
+      <h2>Demystifying Technology without Jargon</h2>
     );
   }
 });
