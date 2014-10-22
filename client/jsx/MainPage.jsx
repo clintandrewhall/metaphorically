@@ -14,7 +14,7 @@ var MainPage = React.createClass({
     return (
       <div className="MainPage">
         <Nav library={this.props.library} />
-        <section className="twelve columns offset-by-one content">
+        <section className="eleven columns offset-by-two content">
           <h2>Welcome!</h2>
           <p>
             I'm building metaphorical.ly as a companion to my TEDx talk. This

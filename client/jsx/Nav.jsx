@@ -8,11 +8,10 @@ var MainPage = React.createClass({
   render: function() {
     return (
       <nav className="three column sidebar">
-        <ul>
-          <li><a href="/">Home</a></li>
+        <ul className="menu">
         {
           this.props.library.getTermList().map(function(term) {
-            return <li key={term.id}><a href={term.href}>{term.title}</a></li>;
+            return <li key={term.id} className="menuItem"><a href={term.href}>{term.title}</a></li>;
           })
         }</ul>
       </nav>

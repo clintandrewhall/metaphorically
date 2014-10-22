@@ -43,10 +43,10 @@ var Term = React.createClass({
       return (
         <div>
           <Nav library={this.props.library} />
-          <div className="twelve columns offset-by-one content">
+          <section className="eleven columns offset-by-two content">
             <h2>{this.state.term.title}</h2>
             {code({term: this.state.term})}
-          </div>
+          </section>
         </div>
       );
     }
