@@ -24,10 +24,11 @@ function getAsync(library) {
 
 var app = express();
 
-Metaphors.buildLibrary('/public/md', { 'cache': true }, function(err, library) {
+Metaphors.buildLibrary('/public/md', { 'writeReactdown': true }, function(err, library) {
   if (err) {
     console.log(err);
   }
+
   app
     .use('/public', express.static(path.join(__dirname, 'public')))
     .use('/async', getAsync(library))
