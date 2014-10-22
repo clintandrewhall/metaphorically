@@ -44,8 +44,8 @@ gulp.task('serve', ['clean', 'build'], function(callback) {
   nodemon({
     script: 'server.js',
     ext: 'jsx, js',
-    env: { 'NODE_ENV': 'development' },
-    ignore: ['./node_modules/**', './public/md-js/**'],
+    env: { 'NODE_ENV': 'development' } ,
+    ignore: ['./node_modules/**', './public/cache/**'],
     watch: ['./public/jsx', './public/md', './server.js', './metaphors.js', './build.js']
   }).on('start', function () {
     browserSync.init('public/css/*.css', {
@@ -57,10 +57,10 @@ gulp.task('serve', ['clean', 'build'], function(callback) {
   });
 });
 
-gulp.task('clean', ['clean-jsx', 'clean-images', 'clean-css', 'clean-md', 'clean-md-js']);
+gulp.task('clean', ['clean-jsx', 'clean-images', 'clean-css', 'clean-md', 'clean-cache']);
 
-gulp.task('clean-md-js', function(cb) {
-    del(['public/md-js'], cb);
+gulp.task('clean-cache', function(cb) {
+    del(['public/cache'], cb);
 });
 
 gulp.task('clean-images', function(cb) {
@@ -79,7 +79,5 @@ gulp.task('clean-md', function(cb) {
     del(['public/md'], cb);
 });
 
-gulp.task('build', ['clean', 'less', 'jsx', 'md', 'images'], function(cb) {
-  cb();
-});
+gulp.task('build', ['clean', 'less', 'jsx', 'md', 'images']);
 gulp.task('default', ['clean', 'build', 'serve']);
