@@ -8,8 +8,10 @@ var React = require('react');
 var Titlebar = React.createClass({
   render: function() {
     return (
-      <h1><a href="/">metaphorical.ly</a></h1>
-      <h2>Demystifying Technology without Jargon</h2>
+      <header>
+        <h1 className="heading"><a href="/"><span className="domain">metaphorical.</span>ly</a></h1>
+        <h2 className="subheading">Demystifying Technology without Jargon</h2>
+      </header>
     );
   }
 });
