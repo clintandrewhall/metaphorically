@@ -54,7 +54,7 @@ Metaphors.buildLibrary('/public/md', { 'cache': true }, function(err, library) {
           '  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n' +
           '  <meta property="og:url" content="http://metaphorical.ly" />' +
           '  <meta property="og:title" content="Metaphorical.ly: Demystifying Technology without Jargon" />' +
-          '  <meta property="og:description" content="An open-source effort to demystify common and popular technologies in an easily understood way. Contribute today!/>' +
+          '  <meta property="og:description" content="An open-source effort to demystify common and popular technologies in an easily understood way. Contribute today!"/>' +
           '  <meta property="og:image" content="http://metaphorical.ly/public/images/twitter-banner.png" />' +
           '  <!--[if lt IE 9]>\n' +
           '    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>\n' +
