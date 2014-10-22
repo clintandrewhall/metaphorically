@@ -17,12 +17,17 @@ var MainPage = React.createClass({
         <section className="eleven columns offset-by-two content">
           <h2>Welcome!</h2>
           <p>
-            I'm building metaphorical.ly as a companion to my TEDx talk. This
-            is just a placeholder as I flush out the site.
+            I'm building metaphorical.ly as a companion
+            to <a href="http://tedxrenfrewcollingwood.com/speaker-2014/clint-hall">my TEDx talk</a>.
           </p>
+          <p><a href="http://tedxrenfrewcollingwood.com/">
+            <img src="/public/images/tedx.png" width="400" />
+          </a></p>
           <p>
-            In the meantime, if you'd like to submit a term and metaphor, you
-            can open a <a href="https://github.com/clintandrewhall/metaphorically/pulls">pull request</a> on GitHub.
+            This is just a placeholder as I flush out the site. In the meantime,
+            if you'd like to submit a term and metaphor, you can open
+            a <a href="https://github.com/clintandrewhall/metaphorically/pulls">pull request</a> on
+            GitHub.
           </p>
           <p>
           <iframe src={github} allowTransparency="true" frameBorder="0" scrolling="0" width="170" height="30"></iframe>
