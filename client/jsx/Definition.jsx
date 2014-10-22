@@ -8,7 +8,7 @@ var Definition = React.createClass({
   render: function() {
     return (
       <div className="definition" id="definition">
-        <blockquote dangerouslySetInnerHTML={{__html: marked(this.props.children)}} />
+        <blockquote>{this.props.children}</blockquote>
         <cite>— <a href={this.props.href}>{this.props.source}</a></cite>
       </div>
     );

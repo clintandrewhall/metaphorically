@@ -84,7 +84,6 @@ function saveFiles(opts, callback) {
 
 function buildMarkdown(opts, callback) {
   var terms = {};
-  console.log(appRoot + '/metaphors');
 
   dir.readFiles(appRoot + '/metaphors', {
     match: /.md$/,
@@ -94,6 +93,11 @@ function buildMarkdown(opts, callback) {
       if (err) {
         return callback(err);
       }
+
+      // Hacky, hacky...
+      content = content.replace(/(<\/?[A-Z]\S[^>]*\/?>)/gm, function(match) {
+        return '\n\n' + match + '\n\n';
+      });
 
       var id = filename.split('/').pop().split('.md')[0],
         contents = reactdown(content, {}),
