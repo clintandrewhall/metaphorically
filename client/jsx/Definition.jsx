@@ -9,7 +9,9 @@ var Definition = React.createClass({
     return (
       <div className="definition" id="definition">
         <blockquote>{this.props.children}</blockquote>
-        <cite>— <a href={this.props.href}>{this.props.source}</a></cite>
+        <cite className="m4Cite">
+          — <a href={this.props.href}>{this.props.source}</a>
+        </cite>
       </div>
     );
   }

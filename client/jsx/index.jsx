@@ -9,18 +9,10 @@ var React = require('react'),
 var Client = React.createClass({
   render: function() {
     return (
-      <html>
-        <head>
-          <link rel="stylesheet" href="/public/css/base.css" />
-          <link rel="stylesheet" href="/public/css/skeleton.css" />
-          <link rel="stylesheet" href="/public/css/layout.css" />
-          <link rel="stylesheet" href="/public/css/style.css" />
-        </head>
-        <body>
-          <App library={this.props.library} path={this.props.path} />
-          <script src='//localhost:3000/browser-sync/browser-sync-client.1.5.8.js'></script>
-        </body>
-      </html>
+      <body>
+        <App library={this.props.library} path={this.props.path} />
+        <script src='//localhost:3000/browser-sync/browser-sync-client.1.5.8.js'></script>
+      </body>
     );
   }
 });

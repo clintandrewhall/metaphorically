@@ -1,6 +1,6 @@
 {
   "name": "metaphorically",
-  "version": "0.0.1-16",
+  "version": "0.0.1-2",
   "description": "Metaphors are awesome.",
   "repository": "https://github.com/clintandrewhall/metaphorically",
   "main": "./server.js",

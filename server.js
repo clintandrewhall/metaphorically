@@ -41,7 +41,26 @@ Metaphors.buildLibrary('/public/md', { 'cache': true }, function(err, library) {
         if (err) {
           return next(err);
         }
-        res.send('<!doctype html>\n' + markup);
+        res.send('<!doctype html>\n' +
+          '<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->\n' +
+          '<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->\n' +
+          '<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->\n' +
+          '<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->\n' +
+          '<head>\n' +
+          '  <meta charset="utf-8">\n' +
+          '  <title>Metaphorical.ly: Demystifying Technology without Jargon</title>\n' +
+          '  <meta name="description" content="Upcoming TEDx Talk">\n' +
+          '  <meta name="author" content="Clint Andrew Hall - @metaphorical_ly">\n' +
+          '  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n' +
+          '  <!--[if lt IE 9]>\n' +
+          '    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>\n' +
+          '  <![endif]-->\n' +
+          '  <link rel="stylesheet" href="/public/css/base.css" />\n' +
+          '  <link rel="stylesheet" href="/public/css/skeleton.css" />\n' +
+          '  <link rel="stylesheet" href="/public/css/layout.css" />\n' +
+          '  <link rel="stylesheet" href="/public/css/style.css" />\n' +
+          '</head>' + markup + '</html>'
+        );
       });
     })
     .listen(8000, function() {
