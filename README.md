@@ -23,9 +23,9 @@ title: Name of the Tech
 
 <Metaphor id="SOME ID">
   <M4Title>TITLE OF YOUR MASTERWORK</M4Title>
-  <M4Content>
+
     CONTENT OF YOUR MASTER WORK, (MARKDOWN ACCEPTED)
-  </M4Content>
+
   <M4Author handle="YOUR HANDLE" href="LINK TO YOU" />
 </Metaphor>
 ```
