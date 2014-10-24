@@ -28,5 +28,5 @@ title: Defragmenting
   When you defragment the hard drive, you move all of the empty space to one part
   of the disk, making it easier for the computer to find space for new files
   (and making it easier for the disk to find it later!).
-  <M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
+  <M4Author handle="livlihood" href="#" />
 </Metaphor>
