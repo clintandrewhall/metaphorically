@@ -17,6 +17,6 @@ title: Open Source
 
 <Metaphor id="water">
   <M4Title>Open Source is like water.</M4Title>
-  Open source code, like water, is free. Companies sometimes bottle it up in a pretty package and sell it as they do with bottled water. Why do people buy bottled water or pay for open source software? Convienance, mostly, but sometimes the packaging is hard to resist. (Support, training, branding)
+  Open source code, like water, is free. Companies sometimes bottle it up in a pretty package and sell it as they do with bottled water. Why do people buy bottled water or pay for open source software? Convenience, mostly, but sometimes the packaging is hard to resist. (Support, training, branding)
   <M4Author handle="brianleroux" href="http://www.github.com/brianleroux" />
 </Metaphor>

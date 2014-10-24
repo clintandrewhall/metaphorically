@@ -24,7 +24,7 @@ var MainPage = React.createClass({
             <img src="/public/images/tedx.png" width="400" />
           </a></p>
           <p>
-            This is just a placeholder as I flush out the site. In the meantime,
+            This is just a placeholder as I flesh out the site. In the meantime,
             if you'd like to submit a term and metaphor, you can open
             a <a href="https://github.com/clintandrewhall/metaphorically/pulls">pull request</a> on
             GitHub.

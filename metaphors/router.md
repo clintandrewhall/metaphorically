@@ -17,8 +17,8 @@ title: Router
   your cord into the correct outlet.
 
   A router does the same thing.  When websites want to be able to send a webpage
-  to your computer, the router connects the web server's message to your device,
-  (rather than someone else in your house).
+  to your computer, the router connects the web server's message to your device
+  (rather than some other device in your house).
   <M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
 </Metaphor>
 
