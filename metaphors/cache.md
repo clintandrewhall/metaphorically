@@ -6,8 +6,8 @@ title: Cache
 In computing, a cache is a component that transparently stores data so that future requests for that data can be served faster. The data that is stored within a cache might be values that have been computed earlier or duplicates of original values that are stored elsewhere. If requested data is contained in the cache (cache hit), this request can be served by simply reading the cache, which is comparatively faster. Otherwise (cache miss), the data has to be recomputed or fetched from its original storage location, which is comparatively slower. Hence, the greater the number of requests that can be served from the cache, the faster the overall system performance becomes.
 </Definition>
 
-<Metaphor id="cache">
-<M4Title>Cache</M4Title>
+<Metaphor id="brain">
+<M4Title>A Cache is a Brain</M4Title>
 The brain is similar to a cache in the sense that it is capable of retaining information extracted from some other source. The source of that information is called the system of record, which is typically slower to access, so our brain keeps a copy of the record for the express purpose of accessing the information in a more rapid fashion.
 
 Consider the number stored on your mobile phone, the system of record. Most of us retain that number in our brain because we typically reference it on such a frequent basis. The value of caching (in the brain) that information is the covenience of rapid recall. Yet, if our brains were unable to store the number, then recollection would be an expensive operation, as it would require thumbing through a sequence of actions on our phone for each and every inquiry.
