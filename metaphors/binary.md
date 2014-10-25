@@ -13,51 +13,57 @@ A lot of people are confused by what Binary actually is... sure, it’s a series
 While most programs, in their most basic, *basic* form, are binary, binary in and of itself is a method of counting.
 
 So let’s take it as a puzzle.  Suppose we have a checkers set, with red and black pieces and the checkerboard.  Then say I cut the board so that there is only one line of squares, which would be eight squares:
+<pre>
  _ _ _ _ _ _ _ _
 |_|_|_|_|_|_|_|_| = 0
-
+</pre>
 So now we say that the red checkers are ‘1’. So there are no checkers on the board, so that’s obviously zero. And for 1 we’d put a red square:
+<pre>
  _ _ _ _ _ _ _ _
 |r|_|_|_|_|_|_|_| = 1
  1
-
+</pre>
 But now... how do we represent 2? We only have red checkers... well, we have more squares in our row... why not put a red checker in the next space?  That could be 2, right:
+<pre>
  _ _ _ _ _ _ _ _
 |_|r|_|_|_|_|_|_| = 2
    2
-
+</pre>
 Ok, so now what about three?  Well, we could just move the checker down one square:
-   _ _ _ _ _ _ _ _
-  |_|_|r|_|_|_|_|_| = 3?
-
+<pre>
+ _ _ _ _ _ _ _ _
+|_|_|r|_|_|_|_|_| = 3?
+</pre>
 But that seems wasteful... the larger the number, the more squares we need.  Can we make it so we can use fewer squares?
 
 Well we already said that the first square was one if the red checker was there... why not use it, too?
-   _ _ _ _ _ _ _ _
-  |r|r|_|_|_|_|_|_| = 3
-   1+2
-
+<pre>
+ _ _ _ _ _ _ _ _
+|r|r|_|_|_|_|_|_| = 3
+ 1+2
+</pre>
 That’s a much better use of the squares.  Now, if we follow the pattern we’ve set up, we can set up the counting game to be REALLY efficient:
-   _ _ _ _ _ _ _ _
-  |_|_|r|_|_|_|_|_| = 4
-       4
-   _ _ _ _ _ _ _ _
-  |r|_|r|_|_|_|_|_| = 5
-   1 + 4
-   _ _ _ _ _ _ _ _
-  |_|r|r|_|_|_|_|_| = 6
-     2+4
-   _ _ _ _ _ _ _ _
-  |r|r|r|_|_|_|_|_| = 7
-   1+2+4
-
+<pre>
+ _ _ _ _ _ _ _ _
+|_|_|r|_|_|_|_|_| = 4
+     4
+ _ _ _ _ _ _ _ _
+|r|_|r|_|_|_|_|_| = 5
+ 1 + 4
+_ _ _ _ _ _ _ _
+|_|r|r|_|_|_|_|_| = 6
+   2+4
+ _ _ _ _ _ _ _ _
+|r|r|r|_|_|_|_|_| = 7
+ 1+2+4
+</pre>
 ...and so on...
 
 Do you see the pattern?
-
+<pre>
 0  0  0  0  0  0  0  1
 1  2  4  8  16 32 64 128
-
+</pre>
 Do those numbers sound familiar?  16, 32, 64, 128... they’re all sizes of iPods, thumb drives and other storage devices. :-)
 
 Binary helps computers build numbers, which combine to form letters, which combine to form other, more complicated structures.  That’s all binary is...
