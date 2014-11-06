@@ -46,13 +46,13 @@ function saveFiles(opts, callback) {
           }
         });
 
-        /*files.forEach(function(file) {
+        files.forEach(function(file) {
           if (file !== 'index') {
             content = content.replace(new RegExp('<' + file), function(match) {
               return match += ' term={props.term}';
             });
           }
-        });*/
+        });
 
         // Add Component definitions
         var lines = content.split('\n'),
