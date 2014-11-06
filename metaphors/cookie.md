@@ -1,5 +1,5 @@
 ---
-title: Database
+title: Cookie
 ...
 
 <Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/HTTP_cookie">
