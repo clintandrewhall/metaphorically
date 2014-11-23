@@ -61,7 +61,9 @@ var compiler = webpack({
 web.use(webpackDevMiddleware(compiler, {
   publicPath: "/bundle/"
 }));
+
 web.use(serveStatic('public'));
+
 web.use(
   function(req, res, next) {
     try {
