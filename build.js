@@ -54,12 +54,12 @@ function saveFiles(terms, callback) {
         front = [lines.shift()];
       front.push('scope:');
       files.forEach(function(file) {
-        if (file !== 'index') {
-          front.push('  ' + file + ': ./../components/' + file);
+        if (file !== 'Root') {
+          front.push('  ' + file + ': ./../../public/components/' + file);
         }
       });
       lines = front.concat(lines);
-      terms[scanTerm].md = lines.join('\n');
+      markdown[scanTerm] = lines.join('\n');
     });
 
     async.each(metaphors, function(metaphor, callback) {
