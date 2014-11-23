@@ -2,9 +2,9 @@
 title: Binary Code
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Binary_code">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Binary_code">
 A binary code represents text or computer processor instructions using the binary number system's two binary digits, 0 and 1. A binary code assigns a bit string to each symbol or instruction. For example, a binary string of eight binary digits (bits) can represent any of 256 possible values and can therefore correspond to a variety of different symbols, letters or instructions.
-</Definition>
+</M4Definition>
 
 <Metaphor id="counting-puzzle">
 <M4Title>Binary is a Counting Puzzle</M4Title>

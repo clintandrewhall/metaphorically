@@ -2,11 +2,11 @@
 title: Web Browser
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Web_browser">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Web_browser">
   A web browser (commonly referred to as a browser) is a software application
   for retrieving, presenting and traversing information resources on the World
   Wide Web.
-</Definition>
+</M4Definition>
 
 <Metaphor id="tour-guide">
   <M4Title>A Web Browser is a Tour Guide</M4Title>

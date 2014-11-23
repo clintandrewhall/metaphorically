@@ -16,12 +16,12 @@ new metaphor in /metaphor in the following format:
 title: Name of the Tech
 ...
 
-<Definition source="SOURCE" href="LINK">
+<M4Definition source="SOURCE" href="LINK">
 
 DEFINITION AS QUOTED FROM THE SOURCE-- I RECOMMEND WIKIPEDIA.
 (MARKDOWN ACCEPTED)
 
-</Definition>
+</M4Definition>
 
 <Metaphor id="SOME ID">
 <M4Title>TITLE OF YOUR MASTERWORK</M4Title>

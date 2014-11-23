@@ -2,12 +2,12 @@
 title: Server
 ...
 
-<Definition
+<M4Definition
   source="Wikipedia"
   href="http://en.wikipedia.org/wiki/Server_(computing)">
   A server is a running instance of an application (Software) capable of accepting
   requests from the client and giving responses accordingly.
-</Definition>
+</M4Definition>
 
 <Metaphor id="restaurant">
   <M4Title>A server is a restaurant you order takeout from.</M4Title>

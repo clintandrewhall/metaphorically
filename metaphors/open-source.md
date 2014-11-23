@@ -2,7 +2,7 @@
 title: Open Source
 ...
 
-<Definition source="Open Source Foundation" href="http://opensource.org/osd">
+<M4Definition source="Open Source Foundation" href="http://opensource.org/osd">
 1. Free Redistribution
 2. Source Code
 3. Derived Works
@@ -13,7 +13,7 @@ title: Open Source
 8. License Must Not Be Specific to a Product
 9. License Must Not Restrict Other Software
 10. License Must Be Technology-Neutral
-</Definition>
+</M4Definition>
 
 <Metaphor id="water">
   <M4Title>Open Source is like water.</M4Title>

@@ -2,9 +2,9 @@
 title: Phishing
 ...
 
-<Definition source="Wikipedia" href="https://en.wikipedia.org/wiki/Phishing">
+<M4Definition source="Wikipedia" href="https://en.wikipedia.org/wiki/Phishing">
   Phishing is the attempt to acquire sensitive information such as usernames, passwords, and credit card details (and sometimes, indirectly, money) by masquerading as a trustworthy entity in an electronic communication.
-</Definition>
+</M4Definition>
 
 <Metaphor id="fishing">
   <M4Title>Phishing is fishing in a lake.</M4Title>

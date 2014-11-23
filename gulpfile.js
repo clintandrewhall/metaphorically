@@ -1,83 +1,78 @@
-var browserSync = require('browser-sync'),
-  build = require('./build'),
-  clean = require('gulp-clean'),
-  del = require('del'),
-  gulp = require('gulp'),
-  less = require('gulp-less'),
-  nodemon = require('gulp-nodemon'),
-  react = require('gulp-react'),
-  reload = browserSync.reload;
+require('node-jsx').install({extension: '.jsx'});
 
-var paths = {
-  css: './client/css/**/*.less',
-  js: './client/js/**/*.js',
-  images: './client/images/**/*.*',
-  jsx: './client/jsx/**/*.jsx',
-  md: './metaphors/**/*.md',
-  server: 'server.js'
-};
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var clean = require('gulp-clean');
+var nodemon = require('gulp-nodemon');
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var webpackConfig = require('./webpack.config.js');
 
-gulp.task('less', ['clean-css'], function() {
-  return gulp.src(paths.css)
-    .pipe(less())
-    .pipe(gulp.dest('./public/css'))
-    .pipe(reload({ stream: true }));
-});
-
-gulp.task('jsx', ['clean-jsx'], function() {
-  return gulp.src(paths.jsx)
-    .pipe(react())
-    .pipe(gulp.dest('./public/jsx'));
-});
-
-gulp.task('images', ['clean-jsx'], function() {
-  return gulp.src(paths.images)
-    .pipe(gulp.dest('./public/images'));
-});
-
-gulp.task('md', ['clean-md'], function(callback) {
-  return build({}, callback);
-});
+// Default
+// =====================================
+gulp.task('default', ['serve'], function() {});
 
 // start server with nodemon
-gulp.task('serve', ['clean', 'build'], function(callback) {
+gulp.task('serve', ['build'], function(callback) {
   nodemon({
     script: 'server.js',
     ext: 'jsx, js',
     env: { 'NODE_ENV': 'development' } ,
-    ignore: ['./node_modules/**', './public/cache/**'],
-    watch: ['./public/jsx', './public/md', './server.js', './metaphors.js', './build.js']
+    ignore: ['./node_modules/**'],
+    watch: ['./public/components', './terms/js', './server.js', './metaphors.js', './build.js']
   }).on('start', function () {
-    browserSync.init('public/css/*.css', {
-      server: false
-    });
-    gulp.watch(paths.css, ['less']);
-    gulp.watch(paths.jsx, ['jsx']);
-    gulp.watch(paths.md, ['md']);
+    // browserSync.init('dist/css/*.css', {
+    //   server: false
+    // });
+    // gulp.watch(paths.css, ['less']);
+    // gulp.watch(paths.jsx, ['jsx']);
+    // gulp.watch(paths.md, ['md']);
   });
 });
 
-gulp.task('clean', ['clean-jsx', 'clean-images', 'clean-css', 'clean-md', 'clean-cache']);
-
-gulp.task('clean-cache', function(cb) {
-    del(['public/cache'], cb);
+// Clean
+// =====================================
+gulp.task('clean', function() {
+  gulp.src('dist', {read: false})
+  .pipe(clean());
 });
 
-gulp.task('clean-images', function(cb) {
-    del(['public/images'], cb);
+// Build
+// =====================================
+gulp.task('build', ['clean', 'markdown'], function() {});
+
+gulp.task('markdown', ['clean'], function() {
+  var child = require('child_process').fork('build.js');
 });
 
-gulp.task('clean-jsx', function(cb) {
-    del(['public/jsx'], cb);
-});
+gulp.task('webpack:build', function(callback) {
+  // Modify some webpack config options
+  var myConfig = Object.create(webpackConfig);
 
-gulp.task('clean-css', function(cb) {
-    del(['public/css'], cb);
-});
+  myConfig.plugins = myConfig.plugins.concat(
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
+  );
 
-gulp.task('clean-md', function(cb) {
-    del(['public/md'], cb);
-});
+  // Run webpack
+  webpack(myConfig, function(err, stats) {
+    if (err) {
+      throw new gutil.PluginError('webpack:build', err);
+    }
 
-gulp.task('build', ['clean', 'less', 'jsx', 'md', 'images']);
-gulp.task('default', ['clean', 'build', 'serve']);
+    gutil.log('[webpack:build]', stats.toString({
+      colors: true
+    }));
+
+    callback();
+  });
+});

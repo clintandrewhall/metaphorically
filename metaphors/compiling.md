@@ -2,9 +2,9 @@
 title: Compiling
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Compiler">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Compiler">
 A compiler is a computer program (or set of programs) that transforms source code written in a programming language (the source language) into another computer language (the target language, often having a binary form known as object code). The most common reason for converting a source code is to create an executable program.
-</Definition>
+</M4Definition>
 
 <Metaphor id="clothes">
 <M4Title>Compiling is Setting Out Your Clothes the Night Before</M4Title>

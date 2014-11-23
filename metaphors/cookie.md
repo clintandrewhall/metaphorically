@@ -2,11 +2,11 @@
 title: Cookie
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/HTTP_cookie">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/HTTP_cookie">
 A cookie, also known as an HTTP cookie, web cookie, or browser cookie, is a
 small piece of data sent from a website and stored in a user's web browser while
 the user is browsing that website.
-</Definition>
+</M4Definition>
 
 <Metaphor id="handstamp">
 <M4Title>A Cookie is a Handstamp at a Bar</M4Title>

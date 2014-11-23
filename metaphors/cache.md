@@ -2,9 +2,9 @@
 title: Cache
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Cache_(computing)">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Cache_(computing)">
 In computing, a cache is a component that transparently stores data so that future requests for that data can be served faster. The data that is stored within a cache might be values that have been computed earlier or duplicates of original values that are stored elsewhere. If requested data is contained in the cache (cache hit), this request can be served by simply reading the cache, which is comparatively faster. Otherwise (cache miss), the data has to be recomputed or fetched from its original storage location, which is comparatively slower. Hence, the greater the number of requests that can be served from the cache, the faster the overall system performance becomes.
-</Definition>
+</M4Definition>
 
 <Metaphor id="brain">
 <M4Title>A Cache is a Brain</M4Title>

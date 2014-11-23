@@ -2,12 +2,12 @@
 title: Router
 ...
 
-<Definition
+<M4Definition
   source="Wikipedia"
   href="http://en.wikipedia.org/wiki/Router_(computing)">
   A router is a networking device, commonly specialized hardware, that forwards
   data packets between computer networks.
-</Definition>
+</M4Definition>
 
 <Metaphor id="operator">
   <M4Title>A router is a Telephone Operator.</M4Title>

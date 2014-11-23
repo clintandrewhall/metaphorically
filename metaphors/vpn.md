@@ -2,13 +2,13 @@
 title: VPN
 ...
 
-<Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Virtual_private_network">
+<M4Definition source="Wikipedia" href="http://en.wikipedia.org/wiki/Virtual_private_network">
 A virtual private network (VPN) extends a private network across a public
 network, such as the Internet. It enables a computer or Wi-Fi-enabled device to
 send and receive data across shared or public networks as if it were directly
 connected to the private network, while benefiting from the functionality,
 security and management policies of the private network.
-</Definition>
+</M4Definition>
 
 <Metaphor id="caller-id">
 <M4Title>A VPN is like using 3-way calling and Caller ID</M4Title>
