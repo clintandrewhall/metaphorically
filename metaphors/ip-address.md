@@ -15,7 +15,7 @@ how to deliver responses from web servers and other devices directly to you.
 <M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
 </Metaphor>
 
-<Metaphor id="phone">
+<Metaphor id="phone" image="telephone">
 <M4Title>An IP Address is a telephone number</M4Title>
 While it looks complicated, an IP Address is nothing more than a unique number
 to identify you on the Internet.  These numbers are assigned by your ISP, or,

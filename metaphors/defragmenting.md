@@ -9,7 +9,7 @@ title: Defragmenting
   number of contiguous regions (fragments).
 </M4Definition>
 
-<Metaphor id="hangers">
+<Metaphor id="hangers" image="hangers">
   <M4Title>Defragmenting is moving empty hangers in your closet.</M4Title>
   As people wear clothing in their closet, they tend to take an article from the
   rod and leave the hanger in place.  As time passes, as you search for the next

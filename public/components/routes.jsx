@@ -9,12 +9,15 @@ var React = require('react'),
   DefaultRoute = Router.DefaultRoute,
   RouteHandler = Router.RouteHandler,
   Root = require('./Root'),
+  Terms = require('./Terms'),
   Term = require('./Term'),
   MainPage = require('./MainPage');
 
 module.exports = (
   <Route handler={Root} path="/">
     <DefaultRoute handler={MainPage} />
-    <Route name="term" path="/term/:termId" handler={Term} />
+    <Route name="terms" path="term" handler={Terms}>
+      <Route name="term" path=":termId" handler={Term} />
+    </Route>
   </Route>
 );

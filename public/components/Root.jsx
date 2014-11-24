@@ -17,7 +17,7 @@ var Root = React.createClass({
           <title>Metaphorical.ly</title>
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
-          <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css' />
+          <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
           <link rel="stylesheet" href="/css/grid/html5reset.css" />
           <link rel="stylesheet" href="/css/grid/col.css" />
           <link rel="stylesheet" href="/css/grid/12cols.css" />

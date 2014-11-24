@@ -10,10 +10,10 @@ var Nav = React.createClass({
     return (
       <nav {...this.props} className="master-nav section group">
         <ul className="master-nav-links">
-          <li className="master-nav-link"><a href="#">Metaphors</a></li>
-          <li className="master-nav-link"><a href="#">Contribute a Metaphor</a></li>
-          <li className="master-nav-link"><a href="#">About</a></li>
+          <li className="master-nav-link"><a href="/term">Metaphors</a></li>
+          <li className="master-nav-link"><a href="/">About</a></li>
           <li className="master-nav-link"><a href="#">Contact</a></li>
+          <li className="master-nav-link"><a href="#">Contribute a Metaphor</a></li>
         </ul>
       </nav>
     );

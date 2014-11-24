@@ -8,7 +8,7 @@ title: Web Browser
   Wide Web.
 </M4Definition>
 
-<Metaphor id="tour-guide">
+<Metaphor id="tour-guide" image="tour-guide">
   <M4Title>A Web Browser is a Tour Guide</M4Title>
   If you wanted to visit a specific building in a new city, and were taking a
   tour, you could ask a tour guide to take you there.  If the address is valid,

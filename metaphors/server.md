@@ -9,7 +9,7 @@ title: Server
   requests from the client and giving responses accordingly.
 </M4Definition>
 
-<Metaphor id="restaurant">
+<Metaphor id="restaurant" image="takeout">
   <M4Title>A server is a restaurant you order takeout from.</M4Title>
   When you're at home and you want some chicken wings, you might order take out.
   This is a lot like using the internet. You want something specific that a

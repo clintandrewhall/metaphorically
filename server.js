@@ -65,6 +65,7 @@ var compiler = webpack({
 /*web.use(webpackDevMiddleware(compiler, {
   publicPath: "/bundle/"
 }));*/
+
 web.use(
   function(req, res, next) {
     if (

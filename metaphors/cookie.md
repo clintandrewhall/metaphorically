@@ -8,7 +8,7 @@ small piece of data sent from a website and stored in a user's web browser while
 the user is browsing that website.
 </M4Definition>
 
-<Metaphor id="handstamp">
+<Metaphor id="handstamp" image="handstamp">
 <M4Title>A Cookie is a Handstamp at a Bar</M4Title>
 When you go to a bar, and you pay the bouncer cover, you might get a hand stamp
 to prove you paid.  If you go out to a few others, you might collect several

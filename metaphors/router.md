@@ -9,7 +9,7 @@ title: Router
   data packets between computer networks.
 </M4Definition>
 
-<Metaphor id="operator">
+<Metaphor id="operator" image="headset">
   <M4Title>A router is a Telephone Operator.</M4Title>
   In the "old days", you didn't dial someone directly, you lifted the handset and
   asked the operator to connect you somewhere.  Telephone operators sat at large

@@ -34,17 +34,12 @@ var Term = React.createClass({
       var Term = React.createFactory(this.state.term);
       var term = manifest[params.termId];
       return (
-        <main className="term section group">
-          <div className="col span_3_of_12">
-            <TermNav />
-          </div>
-          <article className="col span_8_of_12">
-            <h2 className="term-title span_3_of_12">
-              <span className="term-title-caption">{term.title}</span>
-            </h2>
-            <Term term={manifest[this.props.termId]} />
-          </article>
-        </main>
+        <article className="col span_8_of_12">
+          <h2 className="term-title span_3_of_12">
+            <span className="term-title-caption">{term.title}</span>
+          </h2>
+          <Term term={manifest[this.props.termId]} />
+        </article>
       );
     }
     return (

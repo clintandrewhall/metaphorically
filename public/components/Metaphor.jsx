@@ -15,12 +15,9 @@ var Metaphor = React.createClass({
     };
 
     return (
-      <div>
-        <div className="col span_1_of_12" />
-        <article style={style} className="metaphor col span_8_of_12" id={this.props.id}>
-          {this.props.children}
-        </article>
-      </div>
+      <article style={style} className="metaphor col span_8_of_12" id={this.props.id}>
+        {this.props.children}
+      </article>
     );
   }
 });

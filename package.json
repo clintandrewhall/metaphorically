@@ -34,8 +34,8 @@
   },
   "author": "Clint Andrew Hall",
   "scripts": {
-    "predeploy": "gulp build",
-    "start": "node server.js"
+    "prestart": "node build",
+    "start": "node startup.js"
   },
   "domains": [
     "metaphorical.ly",

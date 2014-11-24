@@ -11,8 +11,9 @@ var twitterCode = "\n\n//<![CDATA[\nvar _t = function(d,s,id){\nvar js,fjs=d.get
 var MainPage = React.createClass({
   render: function() {
     return (
-      <main className="main" id="main">
-        <section id="welcome">
+      <main className="main section group" id="main">
+        <span className="col span_2_of_12" />
+        <section id="welcome" className="col span_8_of_12">
           <h2>Welcome!</h2>
           <p>
             I'm building metaphorical.ly as a companion

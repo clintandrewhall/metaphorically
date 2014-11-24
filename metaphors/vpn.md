@@ -10,7 +10,7 @@ connected to the private network, while benefiting from the functionality,
 security and management policies of the private network.
 </M4Definition>
 
-<Metaphor id="caller-id">
+<Metaphor id="caller-id" image="caller-id">
 <M4Title>A VPN is like using 3-way calling and Caller ID</M4Title>
 When you call someone, you appear as you on their Caller ID. Unfortunately,
 sometimes when you're calling collect or from some other country, you appear as

@@ -8,7 +8,7 @@ var M4Author = React.createClass({
   render: function() {
     return (
       <cite className="m4-cite">
-        — <a href={this.props.href}>{this.props.handle}</a>
+        <a href={this.props.href}>{this.props.handle}</a>
       </cite>
     );
   }
