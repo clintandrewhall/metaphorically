@@ -2,9 +2,7 @@
 
 "use strict";
 
-var React = require('react'),
-  Titlebar = require('./Titlebar'),
-  Nav = require('./Nav');
+var React = require('react');
 
 var github = "http://ghbtns.com/github-btn.html?user=clintandrewhall&repo=metaphorically&type=fork&size=large";
 var twitter = "https://twitter.com/intent/tweet?screen_name=metaphorical_ly&text=%23givemeametaphor%20for";
@@ -14,8 +12,6 @@ var MainPage = React.createClass({
   render: function() {
     return (
       <main className="main" id="main">
-        <Titlebar />
-        <Nav />
         <section id="welcome">
           <h2>Welcome!</h2>
           <p>

@@ -4,7 +4,10 @@
 "use strict";
 
 var React = require('react'),
-  Router = require('react-router');
+  Router = require('react-router'),
+  RouteHandler = Router.RouteHandler,
+  Titlebar = require('./Titlebar'),
+  Nav = require('./Nav');
 
 var Root = React.createClass({
   render: function() {
@@ -12,19 +15,28 @@ var Root = React.createClass({
       <html>
         <head>
           <title>Metaphorical.ly</title>
+          <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
+          <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
+          <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css' />
+          <link rel="stylesheet" href="/css/grid/html5reset.css" />
+          <link rel="stylesheet" href="/css/grid/col.css" />
+          <link rel="stylesheet" href="/css/grid/12cols.css" />
+          <link rel="stylesheet" href="/css/style.css" />
         </head>
         <body>
           <div id="content">
-            {this.props.children}
+            <Titlebar />
+            <Nav />
+            <RouteHandler />
           </div>
-          <script src="/bundle/bundle.js"></script>
+        {/*<script src="/bundle/bundle.js"></script>*/}
         </body>
       </html>
     );
   }
 });
 
-if (typeof window !== 'undefined') {
+/*if (typeof window !== 'undefined') {
   window.onload = function() {
     Router.run(
       require('./routes'),
@@ -35,6 +47,6 @@ if (typeof window !== 'undefined') {
     );
 
   }
-}
+}*/
 
 module.exports = Root;

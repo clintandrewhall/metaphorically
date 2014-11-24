@@ -7,7 +7,7 @@ var React = require('react'),
 var M4Author = React.createClass({
   render: function() {
     return (
-      <cite className="m4Cite">
+      <cite className="m4-cite">
         — <a href={this.props.href}>{this.props.handle}</a>
       </cite>
     );

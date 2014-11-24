@@ -1,0 +1,127 @@
+body {
+  color: #696969;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+a, a:hover, a:visited {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.selected {
+  color: #ed1c24;
+}
+
+body a:hover {
+  color: #ed1c24;
+}
+
+.header {
+  background: url(../images/header-hero.png) no-repeat 50% 50%;
+  height: 300px;
+}
+
+.heading, .subheading {
+  position: absolute;
+  visibility: hidden;
+}
+
+.master-nav {
+  border: 2px solid #333;
+  border-width: 2px 0;
+  color: #333;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  margin: 1em 0 3em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.master-nav-link {
+  display: inline-block;
+  margin: 1em;
+}
+
+.term {
+  margin: auto;
+  width: 90%;
+}
+
+.term-nav {
+  padding: 0;
+  margin: 3em 3em 0 0;
+  list-style: none;
+  text-align: right;
+}
+
+.term-nav-item {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  line-height: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.term-nav-item a {
+  color: #999;
+}
+
+.term-nav-item a.selected {
+  color: #333;
+}
+
+.term-title, .m4-definition {
+
+}
+
+.term-title {
+  border-bottom: 1px solid #ed1c24;
+  color: #333;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  margin-top: 60px;
+  margin-bottom: .1em;
+  padding-bottom: .5em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.term-title:before {
+  background: url('../images/right-brace.gif') no-repeat 0 0;
+  content: '';
+  display: block;
+  height: 132px;
+  position: absolute;
+  right: -50px;
+  top: -56px;
+  width: 40px;
+}
+
+.metaphor {
+  margin-top: -6em;
+  padding-top: 175px;
+  background: url('../images/headers/default.gif') no-repeat 50% 0;
+}
+
+.metaphor p {
+  margin-bottom: 1em;
+}
+
+.m4-title {
+  color: #333;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: .5em;
+}

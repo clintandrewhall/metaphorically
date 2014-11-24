@@ -7,7 +7,7 @@ var marked = require('marked');
 var M4Definition = React.createClass({
   render: function() {
     return (
-      <div className="definition" id="definition">
+      <div className="m4-definition col span_3_of_12" id="definition">
         <blockquote>{this.props.children}</blockquote>
         <cite className="m4Cite">
           — <a href={this.props.href}>{this.props.source}</a>

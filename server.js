@@ -62,26 +62,33 @@ var compiler = webpack({
   }
 });
 
-web.use(webpackDevMiddleware(compiler, {
+/*web.use(webpackDevMiddleware(compiler, {
   publicPath: "/bundle/"
-}));
-web.use(serveStatic('public'));
+}));*/
 web.use(
   function(req, res, next) {
-    try {
-      Router.run(
-        require('./public/components/routes'),
-        req.path,
-        function (Handler, state) {
-          var html = React.renderToString(Root(null, Handler()));
-          res.end(html);
-        }
-      );
-    } catch(err) {
-      return next(err)
+    if (
+      req.url.indexOf('images') > 0 ||
+      req.url.indexOf('css') > 0 ||
+      req.url.indexOf('script') > 0
+    ) {
+      next();
+    } else {
+      try {
+        Router.run(
+          require('./public/components/routes'),
+          req.url,
+          function (Handler, state) {
+            res.end(React.renderToString(Handler()));
+          }
+        );
+      } catch(err) {
+        return next(err)
+      }
     }
   }
 );
+web.use(serveStatic('public'));
 
 web.listen(port, function() {
   console.log('Listening on ' + port);

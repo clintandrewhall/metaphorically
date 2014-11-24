@@ -6,7 +6,7 @@ var React = require('react');
 var M4Title = React.createClass({
   render: function() {
     return (
-      <h3 className="m4Title">{this.props.children}</h3>
+      <h3 className="m4-title">{this.props.children}</h3>
     );
   }
 });

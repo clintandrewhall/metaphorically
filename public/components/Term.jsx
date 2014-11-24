@@ -2,10 +2,11 @@
 "use strict";
 
 var React = require('react'),
-  ReactAsync = require('react-async'),
-  fs = require('fs'),
   manifest = require('../../terms/js/manifest.json'),
+  Router = require('react-router'),
+  RouteHandler = Router.RouteHandler,
   Titlebar = require('./Titlebar'),
+  TermNav = require('./TermNav'),
   Nav = require('./Nav');
 
 function getTerm(id, cb) {
@@ -16,8 +17,10 @@ function getTerm(id, cb) {
 }
 
 var Term = React.createClass({
+  mixins: [ Router.State ],
   componentWillMount: function() {
-    getTerm(this.props.termId, function(err, term) {
+    var params = this.getParams();
+    getTerm(params.termId, function(err, term) {
       if (err) {
         throw err;
       }
@@ -26,17 +29,22 @@ var Term = React.createClass({
   },
 
   render: function() {
+    var params = this.getParams();
     if (this.state && this.state.term) {
-      var MyComponent = React.createFactory(this.state.term);
+      var Term = React.createFactory(this.state.term);
+      var term = manifest[params.termId];
       return (
-        <div className="term">
-          <Titlebar />
-          <Nav />
-          <h3 className="term-title">{this.state.term.title}</h3>
-          <main className="main">
-            <MyComponent term={manifest[this.props.termId]} />
-          </main>
-        </div>
+        <main className="term section group">
+          <div className="col span_3_of_12">
+            <TermNav />
+          </div>
+          <article className="col span_8_of_12">
+            <h2 className="term-title span_3_of_12">
+              <span className="term-title-caption">{term.title}</span>
+            </h2>
+            <Term term={manifest[this.props.termId]} />
+          </article>
+        </main>
       );
     }
     return (
