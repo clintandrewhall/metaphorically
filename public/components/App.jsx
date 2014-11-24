@@ -4,27 +4,25 @@
 "use strict";
 
 var React = require('react'),
-  Router = require('react-router-component'),
-  Locations = Router.Locations,
-  Location = Router.Location,
-  Term = require('./Term'),
-  MainPage = require('./MainPage');
+  Router = require('react-router');
 
 var App = React.createClass({
   render: function() {
     return (
-      <Locations path={this.props.path}>
-        <Location path="/" handler={MainPage} />
-        <Location path="/term/:termId" handler={Term} />
-      </Locations>
+      <html>
+        <head>
+          <title>Metaphorical.ly</title>
+        </head>
+        <body>
+          <div id="content">
+            {/* this is the important part */}
+            <RouteHandler />
+          </div>
+          <script src="/bundle/bundle.js"></script>
+        </body>
+      </html>
     );
   }
 });
 
 module.exports = App;
-
-if (typeof window !== 'undefined') {
-  window.onload = function() {
-    React.renderComponent(App({path: window.location.pathname}), document.getElementById('content'));
-  }
-}

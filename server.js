@@ -1,3 +1,6 @@
+/**
+* @jsx React.DOM
+*/
 'use strict';
 //require('node-jsx').install({extension: '.jsx'});
 
@@ -10,6 +13,7 @@ var path = require('path'),
   webpack = require('webpack'),
   webpackDevMiddleware = require("webpack-dev-middleware"),
   Root = React.createFactory(require('./public/components/Root')),
+  Router = require('react-router'),
   web = connect(),
   url = require('url');
 
@@ -61,16 +65,18 @@ var compiler = webpack({
 web.use(webpackDevMiddleware(compiler, {
   publicPath: "/bundle/"
 }));
-
 web.use(serveStatic('public'));
-
 web.use(
   function(req, res, next) {
     try {
-      var path = url.parse(req.url).pathname;
-      var app = Root({path: path});
-      var markup = React.renderToString(app);
-      res.end(markup)
+      Router.run(
+        require('./public/components/routes'),
+        req.path,
+        function (Handler, state) {
+          var html = React.renderToString(Root(null, Handler()));
+          res.end(html);
+        }
+      );
     } catch(err) {
       return next(err)
     }

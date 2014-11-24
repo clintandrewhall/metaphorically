@@ -4,7 +4,7 @@
 "use strict";
 
 var React = require('react'),
-  App = require('./App');
+  Router = require('react-router');
 
 var Root = React.createClass({
   render: function() {
@@ -15,7 +15,7 @@ var Root = React.createClass({
         </head>
         <body>
           <div id="content">
-            <App path={this.props.path} />
+            {this.props.children}
           </div>
           <script src="/bundle/bundle.js"></script>
         </body>
@@ -23,5 +23,18 @@ var Root = React.createClass({
     );
   }
 });
+
+if (typeof window !== 'undefined') {
+  window.onload = function() {
+    Router.run(
+      require('./routes'),
+      document.location.pathName,
+      function (Handler, state) {
+        React.render(Root(null, Handler()), document.getElementById('content'));
+      }
+    );
+
+  }
+}
 
 module.exports = Root;
