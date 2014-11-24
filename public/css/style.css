@@ -11,7 +11,7 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
-a.selected {
+body a.selected {
   color: #ed1c24;
 }
 
@@ -83,10 +83,6 @@ body a:hover {
 
 .term-nav-item a {
   color: #999;
-}
-
-.term-nav-item a.selected {
-  color: #333;
 }
 
 .term-title {

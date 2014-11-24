@@ -6,6 +6,20 @@ title: Binary Code
 A binary code represents text or computer processor instructions using the binary number system's two binary digits, 0 and 1.
 </M4Definition>
 
+<Metaphor id="switches" image="switches">
+<M4Title>Binary is a Series of Light Switches</M4Title>
+
+Each switch is a number, each one double the one before, (1, 2, 4, 8, 16, 32...).
+
+Each light switch is either on or off.  If the light is on, you'll include that number.
+
+Add up the numbers from each switch that's "on", and that's what number the binary
+code (1's and 0's, on or off) represents.
+
+The computer then can use these numbers to represent letters, whole numbers, anything
+it needs.
+<M4Author handle="clintandrewhall" href="http://www.github.com/clintandrewhall" />
+</Metaphor>
 <Metaphor id="counting-puzzle">
 <M4Title>Binary is a Counting Puzzle</M4Title>
 A lot of people are confused by what Binary actually is... sure, it's a series of 1s and 0s. But it's been represented as computing itself, (which it is, but not in the way that we've dramatized it).

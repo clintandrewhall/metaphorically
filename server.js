@@ -15,12 +15,13 @@ var path = require('path'),
   Root = React.createFactory(require('./public/components/Root')),
   Router = require('react-router'),
   web = connect(),
-  url = require('url');
+  url = require('url'),
+  exec = require('child_process').exec;
 
 var port = process.env.PORT || 5000;
 
-var compiler = webpack({
-  entry: __dirname + '/public/components/Root.jsx',
+/*var compiler = webpack({
+  entry: __dirname + '/public/components/index.jsx',
   output: {
     path: __dirname,
     publicPath: "/bundle/",
@@ -62,7 +63,7 @@ var compiler = webpack({
   }
 });
 
-/*web.use(webpackDevMiddleware(compiler, {
+web.use(webpackDevMiddleware(compiler, {
   publicPath: "/bundle/"
 }));*/
 
@@ -91,6 +92,12 @@ web.use(
 );
 web.use(serveStatic('public'));
 
-web.listen(port, function() {
-  console.log('Listening on ' + port);
+exec('node build', function(err) {
+  if (err) {
+    console.log(err);
+  } else {
+    web.listen(port, function() {
+      console.log('Listening on ' + port);
+    });
+  }
 });

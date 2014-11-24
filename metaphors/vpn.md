@@ -11,7 +11,7 @@ security and management policies of the private network.
 </M4Definition>
 
 <Metaphor id="caller-id" image="caller-id">
-<M4Title>A VPN is like using 3-way calling and Caller ID</M4Title>
+<M4Title>A VPN is 3-way Calling & Caller ID</M4Title>
 When you call someone, you appear as you on their Caller ID. Unfortunately,
 sometimes when you're calling collect or from some other country, you appear as
 'Unavailable' or 'Unknown', and the person you're calling doesn't know it's you.

@@ -1,6 +1,6 @@
 {
   "name": "metaphorically",
-  "version": "0.0.1-45",
+  "version": "0.0.1-48",
   "description": "Metaphors are awesome.",
   "repository": "https://github.com/clintandrewhall/metaphorically",
   "dependencies": {
@@ -34,7 +34,6 @@
   },
   "author": "Clint Andrew Hall",
   "scripts": {
-    "predeploy": "node build.js",
     "start": "node startup.js"
   },
   "domains": [

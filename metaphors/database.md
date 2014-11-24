@@ -7,7 +7,7 @@ title: Database
 </M4Definition>
 
 <Metaphor id="address-book" image="address-book">
-  <M4Title>A database is an address book</M4Title>
+  <M4Title>A Database is an Address Book</M4Title>
   Address books store names commonly by last name or first name in alphabetical order.  By storing them in a specific order, finding a name is much quicker than in a phone book that is unordered.  A database is similar in that it stores information in an orderly fashion.
   <M4Author handle="whereisciao" href="http://www.github.com/whereisciao" />
 </Metaphor>

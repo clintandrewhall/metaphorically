@@ -10,7 +10,7 @@ title: Server
 </M4Definition>
 
 <Metaphor id="restaurant" image="takeout">
-  <M4Title>A server is a restaurant you order takeout from.</M4Title>
+  <M4Title>A Server is a Takeout Restaurant</M4Title>
   When you're at home and you want some chicken wings, you might order take out.
   This is a lot like using the internet. You want something specific that a
   restaurant offers. You know how to request it. So, the restaurant can provide
