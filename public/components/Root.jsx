@@ -43,6 +43,7 @@ var Root = React.createClass({
           <meta property="og:type" value={type} />
           {/*<meta property="article:author" value="" />*/}
           <meta property="article:publisher" value="https://www.facebook.com/meta4ically" />
+          <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
