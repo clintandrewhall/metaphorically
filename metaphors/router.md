@@ -10,7 +10,7 @@ data packets between computer networks.
 </M4Definition>
 
 <Metaphor id="operator" image="headset">
-<M4Title>A router is a Telephone Operator.</M4Title>
+<M4Title>A Router is a Telephone Operator.</M4Title>
 In the "old days", you didn't dial someone directly, you lifted the handset and
 asked the operator to connect you somewhere.  Telephone operators sat at large
 switchboards and would quite literally connect you to someone else by plugging
@@ -23,7 +23,7 @@ to your computer, the router connects the web server's message to your device
 </Metaphor>
 
 <Metaphor id="receptionist">
-<M4Title>A router is a Receptionist.</M4Title>
+<M4Title>A Router is a Receptionist.</M4Title>
 When you connect a router to your modem, it takes the IP address of your modem
 and gives everyone connected to it a private IP address that only it knows.
 When you ask a web server for a web page, the router connects you, but the web

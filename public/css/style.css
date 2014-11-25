@@ -6,7 +6,7 @@ body {
 }
 
 a, a:hover, a:visited {
-  color: #333;
+  color: #ed1c24;
   cursor: pointer;
   text-decoration: none;
 }
@@ -57,6 +57,10 @@ body a:hover {
   margin: 1em;
 }
 
+.master-nav-link a {
+  color: #333;
+}
+
 .term {
   margin: auto;
   width: 90%;
@@ -72,7 +76,7 @@ body a:hover {
 .term-nav-item {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  font-size: 1.4em;
+  font-size: 1.2em;
   letter-spacing: 1px;
   line-height: 2em;
   list-style: none;
@@ -122,12 +126,9 @@ body a:hover {
   margin-bottom: 1em;
 }
 
-.metaphor p a {
-  text-decoration: underline;
-}
-
 .m4-definition {
-  margin-top: 7.5em;
+  margin-top: 9em;
+  font-size: .8em;
 }
 
 .m4-definition blockquote {
@@ -141,7 +142,6 @@ body a:hover {
 .m4-cite {
   display: block;
   text-align: right;
-  text-decoration: underline;
 }
 
 .m4-title {

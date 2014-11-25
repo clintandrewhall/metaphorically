@@ -3,7 +3,7 @@ title: Database
 ...
 
 <M4Definition source="Wikipedia">
-  A *database* is an organized collection of data. The data are typically organized to model aspects of reality in a way that supports processes requiring information. For example, modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies.
+A *database* is an organized collection of data. The data are typically organized to model aspects of reality in a way that supports processes requiring information. For example, modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies.
 </M4Definition>
 
 <Metaphor id="address-book" image="address-book">
