@@ -6,7 +6,7 @@
 var React = require('react'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  manifest = require('../../terms/js/manifest.json'),
+  manifest = require('./../../terms/js/manifest.json'),
   Titlebar = require('./Titlebar'),
   Footer = require('./Footer'),
   Nav = require('./Nav');

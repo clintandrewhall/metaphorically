@@ -2,7 +2,7 @@
 "use strict";
 
 var React = require('react'),
-  manifest = require('../../terms/js/manifest.json'),
+  manifest = require('./../../terms/js/manifest.json'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
   Titlebar = require('./Titlebar'),

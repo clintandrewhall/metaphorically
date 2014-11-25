@@ -4,7 +4,7 @@
 var React = require('react'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  manifest = require('../../terms/js/manifest.json');
+  manifest = require('./../../terms/js/manifest.json');
 
 var TermNav = React.createClass({
   mixins: [ Router.State ],
