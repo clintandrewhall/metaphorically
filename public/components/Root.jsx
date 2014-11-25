@@ -8,6 +8,7 @@ var React = require('react'),
   RouteHandler = Router.RouteHandler,
   manifest = require('../../terms/js/manifest.json'),
   Titlebar = require('./Titlebar'),
+  Footer = require('./Footer'),
   Nav = require('./Nav');
 
 var Root = React.createClass({
@@ -56,9 +57,10 @@ var Root = React.createClass({
             <Titlebar />
             <Nav />
             <RouteHandler />
+            {/*<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+          <div class="fb-share-button" data-href="http://metaphorical.ly" data-layout="button_count"></div>*/}
+            <Footer />
           </div>
-          <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-          <div class="fb-share-button" data-href="http://metaphorical.ly" data-layout="button_count"></div>
         </body>
       </html>
     );
