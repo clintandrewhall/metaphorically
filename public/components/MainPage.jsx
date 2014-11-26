@@ -20,12 +20,12 @@ var MainPage = React.createClass({
               <div className="welcome-col-content">
                 <h3 className="welcome-header">For Everyone</h3>
                 <p className="intro">
-                  Use the <a href="/terms">metaphors</a> on this site to demystify
+                  Use the <a href="/term">metaphors</a> on this site to demystify
                   the geek-speak you hear everyday.  Understanding these concepts
                   can save you a lot of time and frustration... and phone calls to
                   "your" geek!
                 </p>
-                <p className="action"><a href="/terms">Find a Metaphor</a></p>
+                <p className="action"><a href="/term">Find a Metaphor</a></p>
                 <p className="cta">
                   Hear a term that you wish had a metaphor? <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a> us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a>, or, if you're feeling geeky, open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
                 </p>
@@ -40,7 +40,7 @@ var MainPage = React.createClass({
                   a friend or family member? You can probably find a great
                   metaphor here that can help.
                 </p>
-                <p className="action"><a href="/terms">Find a Metaphor</a></p>
+                <p className="action"><a href="/term">Find a Metaphor</a></p>
                 <p className="cta">
                   Need a metaphor?  <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a>  us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a> , or open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
                 </p>
