@@ -126,17 +126,17 @@ body a:hover {
 }
 
 .summary.term-container {
-  margin-bottom: 2em;
+  margin: 2em auto;
 }
 
 .summary .term-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
   text-align: center;
   height: 2.75em;
   line-height: 2.75em;
   overflow: hidden;
   white-space: nowrap;
-  border: 1px solid #ccc;
-  border-radius: 4px 4px 0 0;
 }
 
 .summary:hover .metaphor:before {
@@ -167,9 +167,6 @@ body a:hover {
   height: 10em;
   background-position: 50% 50%;
   position: relative;
-  border: 1px solid #ccc;
-  border-top-width: 0;
-  border-radius: 0 0 4px 4px;
 
   /* Internet Explorer 10 */
   display:-ms-flexbox;
@@ -193,10 +190,17 @@ body a:hover {
 }
 
 .featured-title {
+  font-family: 'Oswald', sans-serif;
+  border-bottom: 1px solid #ed1c24;
+  color: #333;
+  font-weight: 300;
   font-size: 2em;
   text-align: center;
-  margin-bottom: .75em;
+  padding-bottom: .75em;
+  margin-bottom: 2em;
   text-transform: uppercase;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .summary .metaphor + .metaphor {
@@ -243,6 +247,7 @@ body a:hover {
   z-index: 2;
   text-shadow: 1px 1px 1px #999;
 }
+
 .summary:hover .m4-title {
   display: block;
 }

@@ -70,6 +70,7 @@ web.use(webpackDevMiddleware(compiler, {
 web.use(
   function(req, res, next) {
     if (
+      req.url.indexOf('favicon') > 0 ||
       req.url.indexOf('images') > 0 ||
       req.url.indexOf('css') > 0 ||
       req.url.indexOf('script') > 0
