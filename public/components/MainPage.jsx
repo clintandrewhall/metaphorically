@@ -27,8 +27,7 @@ var MainPage = React.createClass({
                 </p>
                 <p className="action"><a href="/terms">Find a Metaphor</a></p>
                 <p className="cta">
-                  Hear a term that you wish had a metaphor?  Tweet us, post it to
-                  Facebook, or, if you're feeling geeky, open a new task on Github!
+                  Hear a term that you wish had a metaphor? <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a> us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a>, or, if you're feeling geeky, open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
                 </p>
               </div>
             </section>
@@ -43,8 +42,7 @@ var MainPage = React.createClass({
                 </p>
                 <p className="action"><a href="/terms">Find a Metaphor</a></p>
                 <p className="cta">
-                  Need a metaphor?  Tweet us, post it to Facebook, or open a new
-                  task on Github!
+                  Need a metaphor?  <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a>  us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a> , or open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
                 </p>
               </div>
             </section>
@@ -55,11 +53,12 @@ var MainPage = React.createClass({
                 <p className="intro">
                   Think this site is awesome and think you have what it takes to come
                   up with an equally awesome metaphor? Open a pull request on our
-                  Github repo... we'll merge it in and create a summary image for you.
+                  <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a>
+                  repo... we'll merge it in and create a summary image for you.
                 </p>
                 <p className="action"><a href="http://www.github.com/clintandrewhall/metaphorically">Submit a Metaphor</a></p>
                 <p className="cta">
-                  Care to share the love?  Post this to Facebook and Twitter!
+                  Care to share the love?  Post this to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a> and <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Twitter</a> !
                 </p>
               </div>
             </section>
