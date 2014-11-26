@@ -52,9 +52,7 @@ var MainPage = React.createClass({
                 <h3 className="welcome-header">For super Geeks</h3>
                 <p className="intro">
                   Think this site is awesome and think you have what it takes to come
-                  up with an equally awesome metaphor? Open a pull request on our
-                  <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a>
-                  repo... we'll merge it in and create a summary image for you.
+                  up with an equally awesome metaphor? Open a pull request on our <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> repo... we'll merge it in and create a summary image for you.
                 </p>
                 <p className="action"><a href="http://www.github.com/clintandrewhall/metaphorically">Submit a Metaphor</a></p>
                 <p className="cta">
