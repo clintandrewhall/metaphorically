@@ -11,44 +11,60 @@ var twitterCode = "\n\n//<![CDATA[\nvar _t = function(d,s,id){\nvar js,fjs=d.get
 var MainPage = React.createClass({
   render: function() {
     return (
-      <main className="main section group" id="main">
-        <span className="col span_2_of_12" />
-        <section id="welcome" className="col span_8_of_12">
-          <h2>Welcome!</h2>
-          <p>
-            I'm building metaphorical.ly as a companion
-            to <a href="http://tedxrenfrewcollingwood.com/speaker-2014/clint-hall">my TEDx talk</a>.
-          </p>
-          <p><a href="http://tedxrenfrewcollingwood.com/">
-            <img src="/images/tedx.png" width="400" />
-          </a></p>
-          <p>
-            This is just a placeholder as I flesh out the site. In the meantime,
-            if you'd like to submit a term and metaphor, you can open
-            a <a href="https://github.com/clintandrewhall/metaphorically/pulls">pull request</a> on
-            GitHub.
-          </p>
-          <p>
-          <iframe src={github} allowTransparency="true" frameBorder="0" scrolling="0" width="170" height="30"></iframe>
-          </p>
-          <p>
-            If there's a term you'd like defined by metaphor, you can
-            either <a href="https://github.com/clintandrewhall/metaphorically/issues">open a task</a> on
-            GitHub for me or someone else to tackle, or you can tweet me
-            at <a href="http://www.twitter.com/metaphorical_ly">@metaphorical_ly</a> and
-            I'll open one for you, (include the hashtag '#givethemetaphor').
-          </p>
-          <p>
-            <a href="https://twitter.com/intent/tweet?screen_name=metaphorical_ly&text=%23givemeametaphor%20for" className="twitter-mention-button" data-size="large" data-related="metaphorical_ly">Tweet to @metaphorical_ly</a>
-            <script type="text/javascript" dangerouslySetInnerHTML={{__html: twitterCode}}></script>
-          </p>
-          <p>
-            Cheers, and thanks for your support!  See you on the 25th!
-          </p>
-          <p>
-            - Clint
-          </p>
-        </section>
+      <main id="main" className="clearfix">
+        <article className="welcome">
+          <h2 className="welcome-hero">What is <span className="domain">metaphorical</span><span className="suffix">.ly   </span>?</h2>
+          <div class="section group">
+            <span className="col span_2_of_12"/>
+            <section id="everyone" className="welcome-col col span_2_of_12">
+              <div className="welcome-col-content">
+                <h3 className="welcome-header">For Everyone</h3>
+                <p className="intro">
+                  Use the <a href="/terms">metaphors</a> on this site to demystify
+                  the geek-speak you hear everyday.  Understanding these concepts
+                  can save you a lot of time and frustration... and phone calls to
+                  "your" geek!
+                </p>
+                <p className="action"><a href="/terms">Find a Metaphor</a></p>
+                <p className="cta">
+                  Hear a term that you wish had a metaphor?  Tweet us, post it to
+                  Facebook, or, if you're feeling geeky, open a new task on Github!
+                </p>
+              </div>
+            </section>
+            <span className="col span_1_of_12" />
+            <section id="geeks" className="welcome-col col span_2_of_12">
+              <div className="welcome-col-content">
+                <h3 className="welcome-header">For Geeks</h3>
+                <p className="intro">
+                  Ever have difficulty finding the best way to explain something to
+                  a friend or family member? You can probably find a great
+                  metaphor here that can help.
+                </p>
+                <p className="action"><a href="/terms">Find a Metaphor</a></p>
+                <p className="cta">
+                  Need a metaphor?  Tweet us, post it to Facebook, or open a new
+                  task on Github!
+                </p>
+              </div>
+            </section>
+            <span className="col span_1_of_12" />
+            <section id="super" className="welcome-col col span_2_of_12">
+              <div className="welcome-col-content">
+                <h3 className="welcome-header">For super Geeks</h3>
+                <p className="intro">
+                  Think this site is awesome and think you have what it takes to come
+                  up with an equally awesome metaphor? Open a pull request on our
+                  Github repo... we'll merge it in and create a summary image for you.
+                </p>
+                <p className="action"><a href="http://www.github.com/clintandrewhall/metaphorically">Submit a Metaphor</a></p>
+                <p className="cta">
+                  Care to share the love?  Post this to Facebook and Twitter!
+                </p>
+              </div>
+            </section>
+          </div>
+        </article>
       </main>
     );
   }

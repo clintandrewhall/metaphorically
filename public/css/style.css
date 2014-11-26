@@ -263,3 +263,70 @@ body a:hover {
   margin: .5em 0 2em 0;
   color: #696969;
 }
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+  overflow:hidden;
+  height: 0;
+}
+
+.welcome-hero {
+  color: #333;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  line-height: 1em;
+  text-align: center;
+  margin-bottom: .25em;
+  text-transform: uppercase;
+}
+
+.suffix {
+  font-family: 'Patua One', sans-serif;
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+
+.welcome-col-content p {
+  padding: 1em .5em;
+  margin-bottom: .25em;
+}
+
+.welcome-header {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  border-bottom: 1px solid #ed1c24;
+  font-size: 1.75em;
+  text-align: center;
+  text-transform: uppercase;
+  padding: .5em .5em .75em .5em;
+  color: #333;
+}
+
+#everyone .welcome-header {
+  background: url('/images/headers/100/caller-id.png') no-repeat 50% 25px;
+  padding-top: 140px;
+}
+
+#geeks .welcome-header {
+  background: url('/images/headers/100/brain.png') no-repeat 50% 30px;
+  padding-top: 140px;
+}
+
+#super .welcome-header {
+  background: url('/images/headers/100/deathstar.png') no-repeat 50% 5px;
+  padding-top: 140px;
+}
+
+.intro {
+  min-height: 8em;
+}
+
+.action {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
