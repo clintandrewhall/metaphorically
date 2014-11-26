@@ -62,6 +62,7 @@ var Root = React.createClass({
           <div class="fb-share-button" data-href="http://metaphorical.ly" data-layout="button_count"></div>*/}
             <Footer />
           </div>
+          <script type="text/javascript" src="/scripts/google.js"></script>
         </body>
       </html>
     );
