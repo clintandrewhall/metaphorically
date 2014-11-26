@@ -6,6 +6,9 @@ var marked = require('marked');
 
 var M4Definition = React.createClass({
   render: function() {
+    if (this.props.summary) {
+      return null;
+    }
     return (
       <div className="m4-definition col span_3_of_12" id="definition">
         <blockquote>{this.props.children}</blockquote>

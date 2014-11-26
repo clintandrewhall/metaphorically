@@ -9,7 +9,7 @@ var React = require('react'),
   TermNav = require('./TermNav'),
   Nav = require('./Nav');
 
-function getTerm(id, cb) {
+function getTag(id, cb) {
   require.ensure([], function() {
     var term = require('./../../terms/js/' + id);
     return cb(null, term);
@@ -18,32 +18,54 @@ function getTerm(id, cb) {
 
 var Term = React.createClass({
   mixins: [ Router.State ],
+  propTypes: {
+    summary: React.PropTypes.bool,
+    termId: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      summary: false
+    };
+  },
+  getInitialState: function() {
+    var termId = this.props.termId;
+    if (!termId) {
+      termId = this.getParams().termId;
+    }
+    return {
+      termId: termId,
+      summary: this.props.summary
+    }
+  },
+
   componentWillMount: function() {
-    var params = this.getParams();
-    getTerm(params.termId, function(err, term) {
+    getTag(this.state.termId, function(err, tag) {
       if (err) {
         throw err;
       }
-      this.setState({term: term});
+      this.setState({
+        tag: tag,
+        manifest: manifest[this.state.termId]
+      });
     }.bind(this));
   },
 
   render: function() {
-    var params = this.getParams();
-    if (this.state && this.state.term) {
-      var Term = React.createFactory(this.state.term);
-      var term = manifest[params.termId];
-      return (
-        <article className="col span_8_of_12">
-          <h2 className="term-title span_3_of_12">
-            <span className="term-title-caption">{term.title}</span>
-          </h2>
-          <Term term={manifest[this.props.termId]} />
-        </article>
-      );
+    if (!this.state.tag) {
+      return null;
     }
+
+    var Tag = React.createFactory(this.state.tag);
+
     return (
-      <div className="NotFound" />
+      <article className={'term-container col ' + (this.props.summary ? 'span_3_of_12 summary' : 'span_8_of_12 full')}>
+        <h2 className={'term-title' + (this.props.summary ? '' : ' span_3_of_12')}>
+          <a href={this.state.manifest.href} className="term-title-caption">
+            {this.state.manifest.title}
+          </a>
+        </h2>
+        <Tag term={manifest} summary={this.props.summary} />
+      </article>
     );
   }
 });

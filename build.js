@@ -44,7 +44,7 @@ function saveFiles(terms, callback) {
       files.forEach(function(file) {
         if (file !== 'index') {
           content = content.replace(new RegExp('<' + file), function(match) {
-            return match += ' term={props.term}';
+            return match += ' term={props.term} summary={props.summary}';
           });
         }
       });

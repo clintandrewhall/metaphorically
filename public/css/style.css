@@ -89,7 +89,7 @@ body a:hover {
   color: #999;
 }
 
-.term-title {
+.full .term-title {
   border-bottom: 1px solid #ed1c24;
   color: #333;
   font-family: 'Oswald', sans-serif;
@@ -103,7 +103,7 @@ body a:hover {
   text-transform: uppercase;
 }
 
-.term-title:before {
+.full .term-title:before {
   background: url('../images/right-brace.gif') no-repeat 0 0;
   content: '';
   display: block;
@@ -116,10 +116,91 @@ body a:hover {
 
 .metaphor {
   background: url('../images/headers/default.gif') no-repeat 50% 0;
+}
+
+.full .metaphor {
   float: none;
   margin-left: 30%;
   margin-top: 4em;
   padding-top: 175px;
+}
+
+.summary.term-container {
+  margin-bottom: 2em;
+}
+
+.summary .term-title {
+  text-align: center;
+  height: 2.75em;
+  line-height: 2.75em;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+}
+
+.summary:hover .metaphor:before {
+  content: '';
+  position: absolute;
+  background: #FFF;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: .5;
+}
+
+.summary .term-title-caption {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #333;
+  display: block;
+  cursor: pointer;
+}
+
+.summary .term-title-caption:hover {
+  color: #ed1c24;
+}
+
+.summary .metaphor {
+  height: 10em;
+  background-position: 50% 50%;
+  position: relative;
+  border: 1px solid #ccc;
+  border-top-width: 0;
+  border-radius: 0 0 4px 4px;
+
+  /* Internet Explorer 10 */
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+.featured-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: .75em;
+  text-transform: uppercase;
+}
+
+.summary .metaphor + .metaphor {
+  display: none;
 }
 
 .main p, .metaphor p, .metaphor pre {
@@ -150,6 +231,20 @@ body a:hover {
   font-weight: 400;
   text-align: center;
   margin-bottom: .5em;
+}
+
+.summary .m4-title {
+  display: none;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  padding: .25em;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 1px #999;
+}
+.summary:hover .m4-title {
+  display: block;
 }
 
 .footer {
