@@ -19,5 +19,5 @@ The best way to organize clothes for getting dressed is to have all the clothes 
 If you want to speed up your morning, you can instead spend part of your evening reorganizing your clothes from being best organized for storage into being best organized for getting dressed - you pick out your clothes for the day and lay them out for the next morning.
 
 Source code is organized in a way that is best for understanding it and changing it. Compiling is the process of investing additional work up front to reorganize the program in a way that is best for actually running the computer program, quickly. Often, compiling also has steps that involve checking the program to make sure it "works" in key ways.
-<M4Author handle="aran" href="facebook.com/aran" />
+<M4Author handle="aran" href="https://facebook.com/aran" />
 </Metaphor>
