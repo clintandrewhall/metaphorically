@@ -58,7 +58,7 @@ var Term = React.createClass({
     var Tag = React.createFactory(this.state.tag);
 
     return (
-      <article className={'term-container col ' + (this.props.summary ? 'span_3_of_12 summary' : 'span_8_of_12 full')}>
+      <article className={'term-container col ' + (this.props.summary ? 'span_3_of_12 summary' : 'span_9_of_12 full')}>
         <h2 className={'term-title' + (this.props.summary ? '' : ' span_3_of_12')}>
           <a href={this.state.manifest.href} className="term-title-caption">
             {this.state.manifest.title}

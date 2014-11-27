@@ -13,53 +13,47 @@ var MainPage = React.createClass({
     return (
       <main id="main" className="clearfix">
         <article className="welcome">
-          <h2 className="welcome-hero">What is <span className="domain">metaphorical</span><span className="suffix">.ly   </span>?</h2>
-          <div class="section group">
+          <h2 className="welcome-hero">What is <span className="domain">metaphorical</span><span className="suffix">.ly </span>?</h2>
+          <div className="section group">
+            <span className="col span_3_of_12"/>
+            <p className="col welcome-hero-text span_6_of_12"><span className="domain">metaphorical</span><span className="suffix">.ly</span> encourages everyone to begin to demystify technology by breaking it down into simple metaphors. By doing so, we'll begin to see technology not as sorcery or alchemy, but as simple interactions with things designed by people.</p>
+          </div>
+          <div className="section group">
             <span className="col span_2_of_12"/>
             <section id="everyone" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
-                <h3 className="welcome-header">For Everyone</h3>
+                <h3 className="welcome-header">Everyone</h3>
                 <p className="intro">
                   Use the <a href="/term">metaphors</a> on this site to demystify
-                  the geek-speak you hear everyday.  Understanding these concepts
-                  can save you a lot of time and frustration... and phone calls to
-                  "your" geek!
-                </p>
-                <p className="action"><a href="/term">Find a Metaphor</a></p>
-                <p className="cta">
-                  Hear a term that you wish had a metaphor? <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a> us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a>, or, if you're feeling geeky, open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
+                  the geek-speak you hear every day.  Understanding these concepts
+                  can save you a lot of time and frustration... and phone calls to <span style={{whiteSpace:'nowrap'}}>"your" geek!</span>
                 </p>
               </div>
             </section>
             <span className="col span_1_of_12" />
             <section id="geeks" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
-                <h3 className="welcome-header">For Geeks</h3>
+                <h3 className="welcome-header">Geeks</h3>
                 <p className="intro">
                   Ever have difficulty finding the best way to explain something to
-                  a friend or family member? You can probably find a great
-                  metaphor here that can help.
-                </p>
-                <p className="action"><a href="/term">Find a Metaphor</a></p>
-                <p className="cta">
-                  Need a metaphor?  <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a>  us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a> , or open a new task on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> !
+                  a friend or family member? You can probably find a great metaphor <a href="/term">here</a> that <span style={{whiteSpace:'nowrap'}}>can help.</span>
                 </p>
               </div>
             </section>
             <span className="col span_1_of_12" />
             <section id="super" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
-                <h3 className="welcome-header">For super Geeks</h3>
+                <h3 className="welcome-header">Super Geeks</h3>
                 <p className="intro">
-                  Think this site is awesome and think you have what it takes to come
-                  up with an equally awesome metaphor? Open a pull request on our <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> repo... we'll merge it in and create a summary image for you.
-                </p>
-                <p className="action"><a href="http://www.github.com/clintandrewhall/metaphorically">Submit a Metaphor</a></p>
-                <p className="cta">
-                  Care to share the love?  Post this to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a> and <a href="http://www.twitter.com/metaphorical_ly" target="_blank">Twitter</a> !
+                  Think this site is awesome? Do you have what it takes to come
+                  up with an equally awesome metaphor? Open a pull request on our <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a> repo... we'll merge it in and create a summary image <span style={{whiteSpace:'nowrap'}}>for you.</span>
                 </p>
               </div>
             </section>
+            <p className="group section cta"><a href="/term">View the Metaphors</a></p>
+            <p className="group section contact">
+            Hear a term that you wish had a metaphor?<br/><a href="http://www.twitter.com/metaphorical_ly" target="_blank">Tweet</a> us, post it to <a href="https://www.facebook.com/meta4ically" target="_blank">Facebook</a>, or, if you're feeling geeky, open a new task <span style={{whiteSpace:'nowrap'}}>on <a href="http://www.github.com/clintandrewhall/metaphorically" target="_blank">Github</a>!</span>
+            </p>
           </div>
         </article>
       </main>

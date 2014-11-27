@@ -46,7 +46,7 @@ var Root = React.createClass({
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
-          <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+          <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin' rel='stylesheet' type='text/css' />
           <link rel="stylesheet" href="/css/grid/html5reset.css" />
           <link rel="stylesheet" href="/css/grid/col.css" />
           <link rel="stylesheet" href="/css/grid/12cols.css" />
