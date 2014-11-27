@@ -3,6 +3,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   line-height: 24px;
+  margin-top: 460px;
   min-width: 1000px;
 }
 
@@ -22,6 +23,44 @@ body a:hover {
 
 .header {
   height: 300px;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+#header {
+  width: 100%;
+  height: 400px;
+  background: #FFF;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
+}
+
+#header.hiding .header, #header.smaller .header {
+  opacity: 0;
+}
+
+#header.smaller .header {
+  display: none;
+}
+
+#header.smaller .master-nav {
+  margin: 0;
+  top: 0;
+}
+
+#header.smaller {
+  height: 73px;
 }
 
 .heading, .subheading {
@@ -42,6 +81,10 @@ body a:hover {
 }
 
 .master-nav {
+  position: fixed;
+  top: 300px;
+  left: 0;
+  width: 100%;
   border: 2px solid #333;
   border-width: 2px 0;
   color: #333;
@@ -51,6 +94,11 @@ body a:hover {
   margin: 1em 0 3em 0;
   text-align: center;
   text-transform: uppercase;
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  -ms-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  transition: top 0.3s;
 }
 
 .master-nav-link {

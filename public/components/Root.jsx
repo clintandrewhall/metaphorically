@@ -55,14 +55,17 @@ var Root = React.createClass({
         <body>
           <script type="text/javascript" src="/scripts/fbjs.js"></script>
           <div id="content">
-            <Titlebar />
-            <Nav />
+            <div id="header">
+              <Titlebar />
+              <Nav />
+            </div>
             <RouteHandler />
             {/*<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
           <div class="fb-share-button" data-href="http://metaphorical.ly" data-layout="button_count"></div>*/}
             <Footer />
           </div>
           <script type="text/javascript" src="/scripts/google.js"></script>
+          <script type="text/javascript" src="/scripts/script.js"></script>
         </body>
       </html>
     );
