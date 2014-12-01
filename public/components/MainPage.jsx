@@ -13,13 +13,13 @@ var MainPage = React.createClass({
     return (
       <main id="main" className="clearfix">
         <aside className="video">
+          <section id="tedx">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/IwjLylj6GpI" frameBorder="0" allowFullScreen></iframe>
+          </section>
           <section id="peopleTech">
             <h2 className="ptLineOne"><em>Technology</em><span> understanding </span><em>People</em></h2>
             <p className="ptLineTwo"><span>has trumped</span></p>
             <h2 className="ptLineThree"><em>People</em><span> understanding </span><em>Technology</em></h2>
-          </section>
-          <section id="tedx">
-            <iframe width="560" height="315" src="//www.youtube.com/embed/IwjLylj6GpI" frameBorder="0" allowFullScreen></iframe>
           </section>
           <section id="artScience">
           <h2 className="ptLineOne"><em>Art</em><span> and </span><em>Science</em></h2>
@@ -28,7 +28,7 @@ var MainPage = React.createClass({
           </section>
         </aside>
         <article className="welcome">
-          <h2 className="welcome-hero">What is <span className="domain">metaphorical</span><span className="suffix">.ly </span>?</h2>
+          <h2 className="welcome-hero">So what is <span className="domain">metaphorical</span><span className="suffix">.ly </span>?</h2>
           <div className="section group">
             <p className="col welcome-hero-text span_6_of_12"><span className="domain">metaphorical</span><span className="suffix">.ly</span> encourages everyone to begin to demystify technology by breaking it down into simple metaphors. By doing so, we'll begin to see technology not as sorcery or alchemy, but as simple interactions with things designed by people.</p>
           </div>

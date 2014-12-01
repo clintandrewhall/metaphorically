@@ -1,4 +1,4 @@
-body { margin-top: 460px; }
+body { margin-top: 440px; }
 .header {
   height: 300px;
   -webkit-transition: opacity 0.3s;
@@ -144,10 +144,6 @@ body { margin-top: 460px; }
   padding-top: 175px;
 }
 
-.video {
-  border-bottom: 2px solid #333;
-}
-
 #peopleTech, #artScience {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
@@ -155,7 +151,7 @@ body { margin-top: 460px; }
   line-height: 1.25em;
   text-align: center;
   font-size: 3em;
-  margin-bottom: 1.5em;
+  margin-bottom: .5em;
 }
 
 .peopleTech:after, #artScience:after {
@@ -167,10 +163,15 @@ body { margin-top: 460px; }
   display: block;
 }
 
-.ptLineOne {
+.ptLineOne, .ptLineThree {
   float: left;
   text-align: right;
   width: 35%;
+  margin-bottom: 1em;
+}
+
+.ptLineThree {
+  text-align: left;
 }
 
 .ptLineOne span, .ptLineThree span {
@@ -179,6 +180,7 @@ body { margin-top: 460px; }
 }
 
 .ptLineTwo {
+  color: #ed1c24;
   font-size: .6em;
   width: 24%;
   margin: 3em 3% 0 3%;
@@ -193,12 +195,6 @@ body { margin-top: 460px; }
   padding: 0 .25em;
 }
 
-.ptLineThree {
-  width: 35%;
-  float: left;
-  text-align: left;
-}
-
 #peopleTech h2 em, #artScience h2 em {
   font-style: normal;
   display: block;
@@ -207,7 +203,7 @@ body { margin-top: 460px; }
 
 #tedx {
   clear: both;
-  padding: 3em 0;
+  padding: 0 0 3em 0;
   text-align: center;
 }
 
@@ -367,8 +363,6 @@ body { margin-top: 460px; }
   overflow:hidden;
   height: 0;
 }
-
-.welcome { margin-top: 6em; }
 
 .welcome-hero {
   color: #333;
