@@ -12,14 +12,27 @@ var MainPage = React.createClass({
   render: function() {
     return (
       <main id="main" className="clearfix">
+        <aside className="video">
+          <section id="peopleTech">
+            <h2 className="ptLineOne"><em>Technology</em><span> understanding </span><em>People</em></h2>
+            <p className="ptLineTwo"><span>has trumped</span></p>
+            <h2 className="ptLineThree"><em>People</em><span> understanding </span><em>Technology</em></h2>
+          </section>
+          <section id="tedx">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/IwjLylj6GpI" frameBorder="0" allowFullScreen></iframe>
+          </section>
+          <section id="artScience">
+          <h2 className="ptLineOne"><em>Art</em><span> and </span><em>Science</em></h2>
+          <p className="ptLineTwo"><span>has become</span></p>
+          <h2 className="ptLineThree"><em>Sorcery</em><span> and </span><em>Alchemy</em></h2>
+          </section>
+        </aside>
         <article className="welcome">
           <h2 className="welcome-hero">What is <span className="domain">metaphorical</span><span className="suffix">.ly </span>?</h2>
           <div className="section group">
-            <span className="col span_3_of_12"/>
             <p className="col welcome-hero-text span_6_of_12"><span className="domain">metaphorical</span><span className="suffix">.ly</span> encourages everyone to begin to demystify technology by breaking it down into simple metaphors. By doing so, we'll begin to see technology not as sorcery or alchemy, but as simple interactions with things designed by people.</p>
           </div>
           <div className="section group">
-            <span className="col span_2_of_12"/>
             <section id="everyone" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
                 <h3 className="welcome-header">Everyone</h3>
@@ -30,7 +43,6 @@ var MainPage = React.createClass({
                 </p>
               </div>
             </section>
-            <span className="col span_1_of_12" />
             <section id="geeks" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
                 <h3 className="welcome-header">Geeks</h3>
@@ -40,7 +52,6 @@ var MainPage = React.createClass({
                 </p>
               </div>
             </section>
-            <span className="col span_1_of_12" />
             <section id="super" className="welcome-col col span_2_of_12">
               <div className="welcome-col-content">
                 <h3 className="welcome-header">Super Geeks</h3>

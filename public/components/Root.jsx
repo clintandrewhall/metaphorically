@@ -41,7 +41,6 @@ var Root = React.createClass({
           <meta property="og:image" value={image} />
           <meta property="fb:app_id" value="667375806717283" />
           <meta property="og:type" value={type} />
-          {/*<meta property="article:author" value="" />*/}
           <meta property="article:publisher" value="https://www.facebook.com/meta4ically" />
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
@@ -51,17 +50,15 @@ var Root = React.createClass({
           <link rel="stylesheet" href="/css/grid/col.css" />
           <link rel="stylesheet" href="/css/grid/12cols.css" />
           <link rel="stylesheet" href="/css/style.css" />
+          <link rel="stylesheet" href="/css/desktop.css" />
         </head>
         <body>
-          <script type="text/javascript" src="/scripts/fbjs.js"></script>
           <div id="content">
             <div id="header">
               <Titlebar />
               <Nav />
             </div>
             <RouteHandler />
-            {/*<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-          <div class="fb-share-button" data-href="http://metaphorical.ly" data-layout="button_count"></div>*/}
             <Footer />
           </div>
           <script type="text/javascript" src="/scripts/google.js"></script>
@@ -73,15 +70,17 @@ var Root = React.createClass({
 });
 
 /*if (typeof window !== 'undefined') {
+  console.log('applying');
   window.onload = function() {
+    console.log('loading');
     Router.run(
       require('./routes'),
       document.location.pathName,
       function (Handler, state) {
-        React.render(Root(null, Handler()), document.getElementById('content'));
+        console.log('rendering');
+        React.render(Handler(), document);
       }
     );
-
   }
 }*/
 

@@ -21,7 +21,7 @@ var path = require('path'),
 var port = process.env.PORT || 5000;
 
 /*var compiler = webpack({
-  entry: __dirname + '/public/components/index.jsx',
+  entry: __dirname + '/index.js',
   output: {
     path: __dirname,
     publicPath: "/bundle/",

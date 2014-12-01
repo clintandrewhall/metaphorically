@@ -54,7 +54,7 @@ function saveFiles(terms, callback) {
         front = [lines.shift()];
       front.push('scope:');
       files.forEach(function(file) {
-        if (file !== 'Root') {
+        if (file !== 'Root' && file != 'index') {
           front.push('  ' + file + ': ./../../public/components/' + file);
         }
       });
