@@ -9,7 +9,7 @@ var Footer = React.createClass({
       <footer className="footer">
         <p className="icons">
           <a className="facebook" href="http://www.facebook.com/meta4ically"><img src="/images/social-facebook-lg.png" height="36" /></a>
-          <a className="twitter" href="http://www.twitter.com/metaforical_ly"><img src="/images/social-twitter-lg.png" height="36" /></a>
+          <a className="twitter" href="http://www.twitter.com/metaphorical_ly"><img src="/images/social-twitter-lg.png" height="36" /></a>
           <a className="github" href="http://www.github.com/clintandrewhall/metaphorically"><img src="/images/social-github-lg.png" height="36" /></a>
         </p>
         <div className="sponsors section group">
