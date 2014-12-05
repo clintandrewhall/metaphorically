@@ -16,7 +16,7 @@ var Nav = React.createClass({
             <a className={this.isActive('terms') ? 'selected' : ''} href="/term">Metaphors</a>
           </li>
           <li className="master-nav-link">
-            <Link className={this.getPath() == '/' ? 'selected' : ''} href="/" to="about">About</Link>
+            <Link href="http://twitter.com/metaphical_ly" to="about">About</Link>
           </li>
           <li className="master-nav-link"><a href="#">Contact</a></li>
           <li className="master-nav-link">
