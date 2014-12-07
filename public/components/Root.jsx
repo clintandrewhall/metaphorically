@@ -31,17 +31,17 @@ var Root = React.createClass({
       <html>
         <head>
           <title>Metaphorical.ly</title>
-          <meta property="og:title" value={title} />
-          <meta property="og:site_name" value="metaphorical.ly" />
-          <meta property="og:url" value={url} />
-          <meta property="og:description" value="An open-source effort to demystify
+          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content="metaphorical.ly" />
+          <meta property="og:url" content={url} />
+          <meta property="og:description" content="An open-source effort to demystify
           common and popular technologies in an easily understood way.
           Contribute today!"
           />
-          <meta property="og:image" value={image} />
-          <meta property="fb:app_id" value="667375806717283" />
-          <meta property="og:type" value={type} />
-          <meta property="article:publisher" value="https://www.facebook.com/meta4ically" />
+          <meta property="og:image" content={image} />
+          <meta property="fb:app_id" content="667375806717283" />
+          <meta property="og:type" content={type} />
+          <meta property="article:publisher" content="https://www.facebook.com/meta4ically" />
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
