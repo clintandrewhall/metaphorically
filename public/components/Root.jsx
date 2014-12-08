@@ -36,12 +36,11 @@ var Root = React.createClass({
           <meta property="og:url" content={url} />
           <meta property="og:description" content="An open-source effort to demystify
           common and popular technologies in an easily understood way.
-          Contribute today!"
+          Suggest or contribute today!"
           />
           <meta property="og:image" content={image} />
           <meta property="fb:app_id" content="667375806717283" />
           <meta property="og:type" content={type} />
-          <meta property="article:publisher" content="https://www.facebook.com/meta4ically" />
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
           <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
@@ -51,6 +50,8 @@ var Root = React.createClass({
           <link rel="stylesheet" href="/css/grid/12cols.css" />
           <link rel="stylesheet" href="/css/style.css" />
           <link rel="stylesheet" href="/css/desktop.css" />
+          <link rel="stylesheet" href="/css/gallery.min.css" />
+          <link rel="stylesheet" href="/css/gallery.theme.css" />
         </head>
         <body>
           <div id="content">

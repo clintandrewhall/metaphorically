@@ -15,7 +15,6 @@ var Metaphor = React.createClass({
   },
   render: function() {
     var style = {
-      //backgroundImage: 'url("/images/headers/' + (this.props.summary ? '100' : '150') + '/' + this.props.image + '.png")'
       backgroundImage: 'url("/images/headers/150/' + this.props.image + '.png")'
     };
 

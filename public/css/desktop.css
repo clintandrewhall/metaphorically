@@ -215,26 +215,14 @@ body { margin-top: 440px; }
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   text-align: center;
-  height: 2.75em;
-  line-height: 2.75em;
+  height: 4.5em;
+  line-height: 4.5em;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.summary:hover .metaphor:before {
-  content: '';
-  position: absolute;
-  background: #FFF;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  opacity: .5;
-}
-
 .summary .term-title-caption {
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-transform: uppercase;
   color: #333;
   display: block;
@@ -246,29 +234,8 @@ body { margin-top: 440px; }
 }
 
 .summary .metaphor {
-  height: 10em;
-  background-position: 50% 50%;
-  position: relative;
-
-  /* Internet Explorer 10 */
-  display:-ms-flexbox;
-  -ms-flex-pack:center;
-  -ms-flex-align:center;
-
-  /* Firefox */
-  display:-moz-box;
-  -moz-box-pack:center;
-  -moz-box-align:center;
-
-  /* Safari, Opera, and Chrome */
-  display:-webkit-box;
-  -webkit-box-pack:center;
-  -webkit-box-align:center;
-
-  /* W3C */
-  display:box;
-  box-pack:center;
-  box-align:center;
+  background-position: 50% 0;
+  padding-top: 175px;
 }
 
 .featured-title {
@@ -281,7 +248,6 @@ body { margin-top: 440px; }
   padding-bottom: .75em;
   margin-bottom: 2em;
   text-transform: uppercase;
-  width: 50%;
   margin: 0 auto;
 }
 
@@ -320,7 +286,6 @@ body { margin-top: 440px; }
 }
 
 .summary .m4-title {
-  display: none;
   font-size: 1.5em;
   line-height: 1.2em;
   padding: .25em;
@@ -328,10 +293,6 @@ body { margin-top: 440px; }
   position: relative;
   z-index: 2;
   text-shadow: 1px 1px 1px #999;
-}
-
-.summary:hover .m4-title {
-  display: block;
 }
 
 .footer {
