@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5 { font-weight: 300; }
 /**/
 iframe { min-width: 100%; min-height: 100%; }
 .video { background: #000; padding: 5em 0;}
-.video:after, .featured:after, .who:after, .footer:after, .term:after {
+.video:after, .featured:after, .who:after, .footer:after, .term:after, .sponsors:after {
   content: ' ';
   clear: both;
   line-height: 0;
@@ -322,6 +322,17 @@ iframe { min-width: 100%; min-height: 100%; }
 .license {
   margin: 1em 16.93%;
   text-align: center;
+}
+
+/**/
+.sponsors {
+  margin: 2em 0;
+}
+
+.sponsor {
+  text-align: center;
+  width: 25%;
+  float: left;
 }
 
 /**/

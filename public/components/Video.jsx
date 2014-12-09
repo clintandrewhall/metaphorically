@@ -10,10 +10,10 @@ var Video = React.createClass({
       <section className="section video">
         <header className="video-header">
           <h2 className="video-heading">Watch the Talk</h2>
-          <p className="video-subheading"><span>courtesy of </span><a href="http://www.ted.org">TED</a><span> and </span><a href="">TEDxRCW</a></p>
+          <p className="video-subheading"><span>courtesy of </span><br /><a href="http://www.ted.org">TED</a><span> and </span><a href="">TEDxRCW</a></p>
         </header>
         <div className="video-container">
-          <iframe src='//www.youtube.com/embed/IwjLylj6GpI' frameborder='0' allowfullscreen></iframe>
+          <iframe src='//www.youtube.com/embed/IwjLylj6GpI' frameBorder="0" allowFullScreen="true"></iframe>
         </div>
       </section>
     );
