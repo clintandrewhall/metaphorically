@@ -23,16 +23,9 @@ var Terms = React.createClass({
   },
   render: function() {
     var content = <RouteHandler />;
-
-    if (!this.state || !this.state.termId) {
-      content = <FeaturedTerms />;
-    }
-
     return (
-      <main className="term section group">
-        <div className="col span_3_of_12">
-          <TermNav />
-        </div>
+      <main className="term">
+        <TermNav />
         {content}
       </main>
     );

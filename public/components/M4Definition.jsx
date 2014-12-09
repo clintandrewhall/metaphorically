@@ -10,7 +10,7 @@ var M4Definition = React.createClass({
       return null;
     }
     return (
-      <div className="m4-definition col span_3_of_12" id="definition">
+      <div className="m4-definition" id="definition">
         <blockquote>{this.props.children}</blockquote>
         <cite className="m4-cite">
           <a href={this.props.href}>{this.props.source}</a>

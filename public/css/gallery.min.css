@@ -628,44 +628,37 @@
 }
 
 .gallery .control-button {
-  color: #ccc;
-  color: rgba(255, 255, 255, 0.4);
+  color: #000;
 }
 
 .gallery .control-button:hover {
-  color: white;
-  color: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 
 /*
 Theme controls how everything looks in Gallery CSS.
 */
-
 .gallery {
   position: relative;
 }
 
 .gallery .item {
-  height: 400px;
+  height: 175px;
   overflow: hidden;
-  text-align: center;
-  background: #4d87e2;
+  background: transparent;
 }
 
 .gallery .controls {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  position: static;
+  margin-top: 1em;
   text-align: center;
 }
 
 .gallery .control-button {
   display: inline-block;
-  margin: 0 .02em;
-  font-size: 3em;
+  margin: 0 .5em;
+  font-size: 2em;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: color .1s;
-  -o-transition: color .1s;
   transition: color .1s;
 }

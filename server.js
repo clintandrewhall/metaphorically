@@ -47,7 +47,7 @@ var port = process.env.PORT || 5000;
     loaders: [
       { test: /\.css$/, loader: "style!css" },
       { test: /\.json$/, loader: "json-loader" },
-      { test: /\.jsx$/, loader: "jsx-loader" },
+      { test: /\.jsx$/, loader: "jsx-loader?harmony" },
       {
         test: /\.png$/,
         loader: "url-loader",

@@ -9,6 +9,8 @@
     "connect-route": "^0.1.4",
     "css-loader": "^0.9.0",
     "enhanced-require": "^0.4.x",
+    "es6-shim": "^0.21.1",
+    "es6-spread": "^0.2.0",
     "fs": "0.0.2",
     "fs-extra": "^0.12.0",
     "json-loader": "^0.5.1",
@@ -20,13 +22,14 @@
     "node-jsx": "^0.12.0",
     "react": "0.12.x",
     "react-async": "^2.0.1",
+    "react-hot-loader": "^0.5.0",
+    "react-router": "~0.11.1",
     "reactdown": "https://github.com/clintandrewhall/reactdown/tarball/master",
     "serve-static": "^1.7.1",
     "style-loader": "^0.8.2",
     "webpack": "^1.4.13",
     "webpack-dev-middleware": "^1.0.11",
-    "webpack-dev-server": "^1.6.6",
-    "react-router": "~0.11.1"
+    "webpack-dev-server": "^1.6.6"
   },
   "subdomain": "metaphorically",
   "engines": {

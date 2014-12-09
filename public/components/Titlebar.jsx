@@ -3,14 +3,21 @@
  */
 "use strict";
 
-var React = require('react');
+var React = require('react/addons');
+var cx = React.addons.classSet;
+var Nav = require('./Nav');
 
 var Titlebar = React.createClass({
   render: function() {
+    var {className, ...otherProps} = this.props;
+
     return (
-      <header {...this.props} className="header section group">
-        <h1 className="heading col span_7_of_12"><a href="/"><span className="domain">metaphorical.</span>ly</a></h1>
-        <h2 className="subheading col span_5_of_12">Demystifying Technology without Jargon</h2>
+      <header {...otherProps} className="header">
+        <div id="title" className="title">
+          <h1 className="heading"><a href="/"><span className="domain">metaphorical.</span>ly</a></h1>
+          <h2 className="subheading">Demystifying Technology without Jargon</h2>
+        </div>
+        <Nav />
       </header>
     );
   }

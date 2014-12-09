@@ -1,89 +1,330 @@
-body { margin-top: 440px; }
-.header {
-  height: 300px;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+.spread_1 {
+  margin-left: 10.06%;
+}
+.spread_2 {
+  margin-left: 20.12%;
 }
 
-#header {
-  width: 100%;
-  height: 400px;
-  background: #FFF;
-  overflow: hidden;
+html{ margin: 0; padding: 0;}
+body { margin: 0; padding: 80px 0 0 0; min-width: 900px; }
+h1, h2, h3, h4, h5 { font-weight: 300; }
+.content { min-width: 900px; }
+
+.domain {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.suffix {
+  font-family: 'Patua One', sans-serif;
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+
+.metaphor p, .metaphor pre {
+  margin-bottom: 1em;
+}
+
+.nav {
+  border-bottom: 2px solid #000;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s;
-}
-
-#header.hiding .header, #header.smaller .header {
-  opacity: 0;
-}
-
-#header.smaller .header {
-  display: none;
-}
-
-#header.smaller .master-nav {
-  margin: 0;
-  top: 0;
-}
-
-#header.smaller {
-  height: 73px;
-}
-
-.heading, .subheading {
-  text-indent: -10000px;
-  direction: ltr;
-  overflow: hidden;
-  display: inline-block;
-  height: 300px;
-}
-
-.heading {
-  background: url('../images/title.png') no-repeat 0 50%;
-  float: right;
-}
-
-.subheading {
-  background: url('../images/subtitle.png') no-repeat right 50%;
-}
-
-.master-nav {
-  position: fixed;
-  top: 300px;
-  left: 0;
-  width: 100%;
-  border: 2px solid #333;
-  border-width: 2px 0;
-  color: #333;
+  right: 0;
+  min-width: 740px;
+  background: #fff url('/images/icon.png') no-repeat 5px 0;
+  background-size: 80px;
+  height: 80px;
+  text-align: right;
+  padding: 0 85px;
+  line-height: 80px;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-size: 1.25em;
-  margin: 1em 0 3em 0;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 0 0 0 1.5em;
+}
+
+.nav-link a { color: #000; }
+.nav-link a.selected { color: #ed1c24; }
+
+/**/
+
+.header {
+  padding: 5em;
+}
+
+.heading, .subheading {
+  overflow: hidden;
+  text-indent: -1000px;
+  width: 50%;
+  height: 200px;
+}
+
+.heading {
+  background: url('/images/subtitle.png') no-repeat right top;
+  float: left;
+  width: 48%;
+}
+
+.subheading {
+  background: url('/images/title.png') no-repeat left top;
+}
+
+/**/
+iframe { min-width: 100%; min-height: 100%; }
+.video { background: #000; padding: 5em 0;}
+.video:after, .featured:after, .who:after, .footer:after, .term:after {
+  content: ' ';
+  clear: both;
+  line-height: 0;
+  overflow: hidden;
+  height: 0;
+  display: block;
+}
+
+.video-header, .featured-header {
+  margin: 2em 0 0 8.46%;
+  width: 23.8%;
+  float: left;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.video-heading, .featured-heading {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+.video-subheading {
+  line-height: 1.5em;
+}
+.video-container {
+  width: 57.7%;
+  margin-left: 1.6%;
+  float: left;
+}
+.video-container { position: relative; padding-bottom: 36%; height: 0; overflow: hidden; max-width: 100%; height: auto; }
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/**/
+.ted {
+  margin: 6em 0;
+  background: url('/images/tech-people.png') no-repeat 50% 50%;
+  height: 350px;
+}
+
+.ted-quote {
+  position: absolute;
+  visibility: hidden;
+}
+
+/**/
+.intro {
+  color: #fff;
+  background: #ed1c24;
+  padding: 7em 16.93%;
+}
+
+.intro-header + p {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+.intro-heading {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 2.75em;
+  line-height: 1em;
+  padding-bottom: .25em;
+  margin-bottom: .25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid #fff;
+  text-align: center;
+}
+
+/**/
+.featured {
+  padding: 5em 0;
+}
+
+.featured-header {
+  margin-top: 1em;
+}
+
+.featured-heading {
+  color: #ed1c24;
+}
+
+.gallery {
+  background: transparent;
+  float: left;
+  width: 57.67%
+}
+
+.gallery:before {
+  content: ' ';
+  height: 132px;
+  display: block;
+  background: url('/images/right-brace.gif') no-repeat 0 0;
+  width: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gallery:after {
+  content: ' ';
+  height: 132px;
+  display: block;
+  background: url('/images/left-brace.gif') no-repeat 0 0;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gallery .item {
+  background: transparent;
+}
+
+.summary {
+  min-height: 150px;
+  margin: 0 45px;
+}
+
+.summary .term-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.75em;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-left: 200px;
+  text-align: center;
+  position: relative;
+  top: .75em;
+}
+
+.metaphor {
+  background-repeat: no-repeat;
+}
+
+.summary .metaphor {
+  min-height: 150px;
+  background-position: 25px 50%;
+  padding-left: 200px;
+  text-align: center;
+  margin-top: -1.5em;
+}
+
+.summary .m4-title {
+  padding-top: 3.5em;
+}
+
+/**/
+
+.view {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 2.25em;
+  text-align: center;
+  line-height: 490px;
+  text-transform: uppercase;
+  background: #000 url('/images/view-background.png') no-repeat 50% 50%;
+  height: 490px;
+}
+
+.view a { color: #fff; }
+
+/**/
+
+.who {
+  margin: 3em 16.93%;
+  width: 66.14%;
+}
+
+.who-header {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.75em;
+  line-height: 1em;
+  text-transform: uppercase;
+  position: absolute;
+  visibility: hidden;
+}
+
+.who-section {
+  float: left;
+  width: 27.6%;
+  margin-right: 8.46%;
+}
+
+#super.who-section {
+  margin-right: 0;
+}
+
+.who-section-heading {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.6em;
+  white-space: nowrap;
+  line-height: 1.2em;
   text-align: center;
   text-transform: uppercase;
-  -webkit-transition: top 0.3s;
-  -moz-transition: top 0.3s;
-  -ms-transition: top 0.3s;
-  -o-transition: top 0.3s;
-  transition: top 0.3s;
+  padding: .5em .5em .75em .5em;
+  color: #333;
 }
 
-.master-nav-link {
-  display: inline-block;
-  margin: 1em;
+#everyone .who-section-heading {
+  background: url('/images/headers/100/caller-id.png') no-repeat 50% 25px;
+  padding-top: 140px;
 }
 
+#geeks .who-section-heading {
+  background: url('/images/headers/100/brain.png') no-repeat 50% 30px;
+  padding-top: 140px;
+}
+
+#super .who-section-heading {
+  background: url('/images/headers/100/deathstar.png') no-repeat 50% 5px;
+  padding-top: 140px;
+}
+
+/**/
+.footer {
+  background: #ed1c24;
+  padding: 2em 0;
+  color: #fff;
+}
+
+.cta {
+  width: 33.86%;
+  float: left;
+  margin-right: 8.46%;
+  margin-left: 16.93%;
+}
+
+.icons a {
+  display: block;
+  width: 8.46%;
+  float: left;
+}
+
+.license {
+  margin: 1em 16.93%;
+  text-align: center;
+}
+
+/**/
 .term {
   margin: auto;
   width: 90%;
@@ -91,9 +332,11 @@ body { margin-top: 440px; }
 
 .term-nav {
   padding: 0;
-  margin: 3em 3em 0 0;
+  margin: 3em 3em 3em 0;
   list-style: none;
   text-align: right;
+  width: 16.93%;
+  float: left;
 }
 
 .term-nav-item {
@@ -137,147 +380,33 @@ body { margin-top: 440px; }
   background: url('../images/headers/default.gif') no-repeat 50% 0;
 }
 
+.full.term-container {
+  width: 70%;
+  float: left;
+}
+
+.full .term-title {
+  float: left;
+  width: 25.4%
+}
+
+.full .m4-definition {
+  width: 25.4%
+}
+
 .full .metaphor {
   float: none;
-  margin-left: 30%;
-  margin-top: 4em;
+  margin-left: 32%;
+  margin-bottom: 3em;
   padding-top: 175px;
 }
 
-#peopleTech, #artScience {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  line-height: 1.25em;
-  text-align: center;
-  font-size: 3em;
-  margin-bottom: .5em;
-}
-
-.peopleTech:after, #artScience:after {
-  content: ' ';
-  clear: both;
-  line-height: 0;
-  overflow: hidden;
-  height: 0;
-  display: block;
-}
-
-.ptLineOne, .ptLineThree {
-  float: left;
-  text-align: right;
-  width: 35%;
-  margin-bottom: 1em;
-}
-
-.ptLineThree {
-  text-align: left;
-}
-
-.ptLineOne span, .ptLineThree span {
-  display: inline-block;
-  font-weight: 300;
-}
-
-.ptLineTwo {
-  color: #ed1c24;
-  font-size: .6em;
-  width: 24%;
-  margin: 3em 3% 0 3%;
-  float: left;
-  border-top: 1px solid #ed1c24;
-}
-
-.ptLineTwo span {
-  display: inline-block;
-  background: #fff;
-  margin-top: -1em;
-  padding: 0 .25em;
-}
-
-#peopleTech h2 em, #artScience h2 em {
-  font-style: normal;
-  display: block;
-  color: #000;
-}
-
-#tedx {
-  clear: both;
-  padding: 0 0 3em 0;
-  text-align: center;
-}
-
-.summary.term-container {
-  margin: 3em auto;
-}
-
-.summary .term-title {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  height: 4.5em;
-  line-height: 4.5em;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.summary .term-title-caption {
-  font-size: 2.5em;
-  text-transform: uppercase;
-  color: #333;
-  display: block;
-  cursor: pointer;
-}
-
-.summary .term-title-caption:hover {
-  color: #ed1c24;
-}
-
-.summary .metaphor {
-  background-position: 50% 0;
-  padding-top: 175px;
-}
-
-.featured-title {
-  font-family: 'Oswald', sans-serif;
-  border-bottom: 1px solid #ed1c24;
-  color: #333;
-  font-weight: 300;
-  font-size: 2em;
-  text-align: center;
-  padding-bottom: .75em;
-  margin-bottom: 2em;
-  text-transform: uppercase;
-  margin: 0 auto;
-}
-
-.summary .metaphor + .metaphor {
-  display: none;
-}
-
-.main p, .metaphor p, .metaphor pre {
-  margin-bottom: 1em;
-}
-
-.m4-definition {
-  margin-top: 9em;
-  font-size: .8em;
-}
-
-.m4-definition blockquote {
-  margin-bottom: 1em;
-}
-
-.m4-definition + .metaphor {
-  margin-top: -7em;
-}
-
-.m4-cite {
+.full .m4-cite {
   display: block;
   text-align: right;
 }
 
-.m4-title {
+.full .m4-title {
   color: #333;
   font-size: 1.4em;
   font-weight: 400;
@@ -285,130 +414,13 @@ body { margin-top: 440px; }
   margin-bottom: .5em;
 }
 
-.summary .m4-title {
-  font-size: 1.5em;
-  line-height: 1.2em;
-  padding: .25em;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 2;
-  text-shadow: 1px 1px 1px #999;
-}
-
-.footer {
+.full .m4-definition {
+  margin-top: 1em;
   font-size: .8em;
-  text-align: center;
-  margin-top: 2em;
-  padding-top: 1em;
+  float: left;
+  clear: left;
 }
 
-.sponsors {
-  border-top: 2px solid #333;
-  margin-top: 2em;
-  padding-top: 1em;
+.full .m4-definition blockquote {
+  margin-bottom: 1em;
 }
-
-.footer p {
-  padding: .25em 0;
-}
-
-.license {
-  margin: .5em 0 2em 0;
-  color: #696969;
-}
-
-.clearfix:after {
-  content: '';
-  clear: both;
-  display: block;
-  overflow:hidden;
-  height: 0;
-}
-
-.welcome-hero {
-  color: #333;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  line-height: 1em;
-  text-align: center;
-  margin-bottom: .25em;
-  text-transform: uppercase;
-}
-
-.welcome-hero-text.col:first-child {
-  border-top: 1px solid #ed1c24;
-  float: none;
-  padding-top: 1.5em;
-  margin-left: 25.4%;
-}
-
-.domain {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.suffix {
-  font-family: 'Patua One', sans-serif;
-  font-size: 1.2em;
-  text-transform: lowercase;
-}
-
-.welcome-col.col:first-child {
-  margin-left: 18.53%;
-}
-
-.welcome-col.col {
-  margin-left: 10.06%;
-}
-
-.welcome-col-content p {
-  padding: 1em .5em;
-  margin-bottom: .25em;
-}
-
-.welcome-header {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  border-bottom: 1px solid #ed1c24;
-  font-size: 1.6em;
-  white-space: nowrap;
-  line-height: 1.2em;
-  text-align: center;
-  text-transform: uppercase;
-  padding: .5em .5em .75em .5em;
-  color: #333;
-}
-
-#everyone .welcome-header {
-  background: url('/images/headers/100/caller-id.png') no-repeat 50% 25px;
-  padding-top: 140px;
-}
-
-#geeks .welcome-header {
-  background: url('/images/headers/100/brain.png') no-repeat 50% 30px;
-  padding-top: 140px;
-}
-
-#super .welcome-header {
-  background: url('/images/headers/100/deathstar.png') no-repeat 50% 5px;
-  padding-top: 140px;
-}
-
-.intro {
-  min-height: 8em;
-}
-
-.cta {
-  text-align: center;
-  font-size: 1.5em;
-  padding: 1em 0 2em 0;
-}
-
-.contact {
-  font-size: .85em;
-  text-align: center;
-}
-
-.facebook, .twitter, .github { margin: 0 18px; }

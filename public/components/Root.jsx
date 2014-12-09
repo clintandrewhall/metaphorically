@@ -42,28 +42,23 @@ var Root = React.createClass({
           <meta property="fb:app_id" content="667375806717283" />
           <meta property="og:type" content={type} />
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
-          <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
+          <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
           <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin' rel='stylesheet' type='text/css' />
           <link rel="stylesheet" href="/css/grid/html5reset.css" />
-          <link rel="stylesheet" href="/css/grid/col.css" />
-          <link rel="stylesheet" href="/css/grid/12cols.css" />
           <link rel="stylesheet" href="/css/style.css" />
           <link rel="stylesheet" href="/css/desktop.css" />
           <link rel="stylesheet" href="/css/gallery.min.css" />
-          <link rel="stylesheet" href="/css/gallery.theme.css" />
         </head>
         <body>
           <div id="content">
-            <div id="header">
-              <Titlebar />
-              <Nav />
-            </div>
+            <Titlebar />
             <RouteHandler />
             <Footer />
+            <div className="license">Created by <a href="http://clintandrewhall.com" property="cc:attributionName" rel="cc:attributionURL">Clint Andrew Hall</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
           </div>
           <script type="text/javascript" src="/scripts/google.js"></script>
-          <script type="text/javascript" src="/scripts/script.js"></script>
+          {/*}<script type="text/javascript" src="/bundle/bundle.js"></script>*/}
         </body>
       </html>
     );
