@@ -22,9 +22,11 @@ var Root = React.createClass({
 
     if (termIdParam) {
       var term = manifest[termIdParam];
-      url += term.href;
-      title = '\'' + term.title + '\' on metaphorical.ly';
-      type = 'metaphorically:metaphor';
+      if (term) {
+        url += term.href;
+        title = '\'' + term.title + '\' on metaphorical.ly';
+        type = 'metaphorically:metaphor';
+      }
     }
 
     return (
