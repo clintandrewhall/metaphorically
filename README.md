@@ -1,10 +1,10 @@
-metaphorical-geek
+metaphorical.ly
 =================
 
 [ ![Codeship Status for clintandrewhall/metaphorically](https://codeship.io/projects/fadad5e0-3aa3-0132-083a-261a2707f8ca/status)](https://codeship.io/projects/42427)
 
-
-Metaphors rock.
+## Watch the TEDx Talk
+[![Redefining how we see technology | Clint Andrew Hall | TEDxRenfrewCollingwood](http://img.youtube.com/vi/IwjLylj6GpI/0.jpg)](http://www.youtube.com/watch?v=IwjLylj6GpI)
 
 ## How to submit your metaphor
 
@@ -16,33 +16,18 @@ new metaphor in /metaphor in the following format:
 title: Name of the Tech
 ...
 
-<M4Definition source="SOURCE" href="LINK">
-
-DEFINITION AS QUOTED FROM THE SOURCE-- I RECOMMEND WIKIPEDIA.
-(MARKDOWN ACCEPTED)
-
+<M4Definition source="{source name}" href="{link}">
+{definition as quoted from the source, markdown accepted}
 </M4Definition>
+<Metaphor id="{some unique id}">
+<M4Title>{title of your masterwork}</M4Title>
 
-<Metaphor id="SOME ID">
-<M4Title>TITLE OF YOUR MASTERWORK</M4Title>
+{content of your masterwork, markdown accepted}
 
-CONTENT OF YOUR MASTER WORK, (MARKDOWN ACCEPTED)
-
-<M4Author handle="YOUR HANDLE" href="LINK TO YOU" />
+<M4Author handle="{your handle}" href="{link to you}" />
 </Metaphor>
 ```
 
-Markdown is accepted almost anywhere, even outside the tags themselves.
+Markdown is accepted almost anywhere, even outside the tags themselves.  Avoid leading spaces and indentation-- they are honored as markdown. :-D
 
-## Hacky, Hacky
-
-I've been in a bit of a hurry to get this together, so the code isn't the
-greatest (#movefast).  All the same, feel free to take a look and suggest
-improvements.
-
-Most of the legwork has been in trying to make the metaphor pages as simple
-to create and edit as possible. I've got a pretty hacky build script that auto
-links everything together, but one cool thing is using `react-markdown` to blend
-markdown and React, (yes, I'm crazy).
-
-Anyways, let me know what you think.  Cheers!
+Suggestions and improvements are always welcome.  Let me know what you think.  Cheers!
