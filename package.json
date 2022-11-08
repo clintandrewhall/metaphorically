@@ -45,7 +45,7 @@
     "www.metaphorical.ly"
   ],
   "devDependencies": {
-    "browser-sync": "~1.7.2",
+    "browser-sync": "~2.27.10",
     "connect-browser-sync": "~1.0.2"
   }
 }
