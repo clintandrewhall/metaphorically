@@ -44,9 +44,9 @@ var Root = React.createClass({
           <meta property="fb:app_id" content="667375806717283" />
           <meta property="og:type" content={type} />
           <meta name="google-site-verification" content="C0eW0qE3gb62wnUvaKhVJVeMlxboTgFbQa5Dc6DY4bY" />
-          <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
-          <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
-          <link href='http://fonts.googleapis.com/css?family=Lato:300&subset=latin' rel='stylesheet' type='text/css' />
+          <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+          <link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css' />
+          <link href='https://fonts.googleapis.com/css?family=Lato:300&subset=latin' rel='stylesheet' type='text/css' />
           <link rel="stylesheet" href="/css/grid/html5reset.css" />
           <link rel="stylesheet" href="/css/style.css" />
           <link rel="stylesheet" href="/css/desktop.css" />
